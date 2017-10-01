@@ -1,0 +1,118 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage[margin=1.42in,bottom=1.71in,top=1.71in]{geometry}
+\usepackage{mathptmx}
+\usepackage{bera}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{floatrow}
+\usepackage{subcaption}
+\usepackage[T1]{fontenc}
+\usepackage{adjustbox}
+\floatsetup[table]{capposition=top}
+\setlength{\parskip}{1em}
+
+\title{{\Huge {\bfseries Software Systems Lab 4:\\TeX Lab}}}
+\author{\LARGE Team Eclipse}
+\date{12th August, 2017}
+
+\begin{document}
+\maketitle
+\begin{figure}[H]
+  \includegraphics[height=400px]{1.png}
+  \caption{Flowchart of a theist Life}
+  \label{fig:flowchart}
+\end{figure}
+
+Figure~\ref{fig:flowchart} above refers to a funny conundrum theists are believed to be living in by the atheists. This is just a joke I picked up from some forum, not taking sides, not even a bit. This is how scared social media has made us, We can not pick sides. Moving on . . . . You need to know how to cite papers in \LaTeX. For e.g. you are talking about research on Indowordnet \cite{indowordnet}, in that case such a citation must be used near a name. In case you need to quote the authors of a paper in a statement, instead of citing them against a topic or word or a line, you need to use a different kind of citation methodology.\\
+
+\begin{table}[H]
+  
+  \caption{Table depicting the use of both multirow and multicolumn} \label{table:1}
+  \begin{adjustbox}{width=1\textwidth}
+    \begin{tabular}{ccc|c|c|c|c|c|c|c|c|c|}
+      \cline{4-12}
+      & & & \multicolumn{5}{c|}{\textbf{Basic Properties}} & \multicolumn{4}{c|}{\textbf{Readability}} \\ \cline{4-12} 
+      & & & \textbf{WC} & \textbf{SC} & \textbf{C-W} & \textbf{S-W} & \textbf{W-S} & \textbf{FK} & \textbf{GF} & \textbf{SMOG} & \textbf{LEX} \\ \hline
+      \multicolumn{2}{|c|}{\multirow{2}{*}{$Baseline$}} & Mean & 0.84 & 0.41 & \textbf{0.56} & \textbf{0.46} & \textbf{0.55} & \textbf{0.60} & 0.56 & 0.57 & 0.63 \\ \cline{3-12} 
+      \multicolumn{2}{|c|}{} & SD & 0.07 & 0.08 & 0.06 & 0.07 & 0. 05 & 0.05 & 0.06 & 0.07 & 0.05 \\ \hline
+      \multicolumn{2}{|c|}{\multirow{2}{*}{$ScaComp_h$}} & Mean & 0.89 & 0.46 & 0.53 & 0.43 & 0.53 & 0.58 & 0.54 & 0.56 & 0.62 \\ \cline{3-12} 
+      \multicolumn{2}{|c|}{} & SD & 0.84 & 0.05 & 0.08 & 0.05 & 0.06 & 0.06 & 0.05 & 0.05 & 0.06 \\ \hline
+      \multicolumn{2}{|c|}{\multirow{2}{*}{$ScaComp_l$}} & Mean & \textbf{0.92} & \textbf{0.48} & 0.55 & 0.45 & 0.53 & 0.59 & \textbf{0.58} & \textbf{0.61} & \textbf{0.64} \\ \cline{3-12} 
+      \multicolumn{2}{|c|}{} & SD & 0.04 & 0.07 & 0.05 & 0.04 & 0.05 & 0.04 & 0.04 & 0.04 & 0.04 \\ \hline
+    \end{tabular}
+  \end{adjustbox}
+\end{table}
+
+To combine rows a package must be imported with in your preamble, then you can use the XXXXXXX command in your document, I did it. The table below includes mathematical notations, which you can produce by embedding the experession in \$ \$ delimiters. For subscript, use underscore and for superscript, use carrot.
+
+{\Large
+
+In table~\ref{table:1} above, we try to demonstrate all the features required to be demonstrated in a table. We use multiple newline, we use a package to enable the use of multiple rows, and multiple columns in the table. Additionally, We have also drawn lines from specific column to column. We also use box resizing with a width specifier for resizing the box within the limits of the document, and avoid any overflow.
+}
+
+Now, we will import images side by side in the same document.
+\begin{figure}[H]
+\ffigbox[0.5\textwidth]
+  {
+    \begin{floatrow}
+    \ffigbox[\linewidth]
+      {\caption{Screenshot: Mobile Interface}
+      \label{subfig:app-mobile}}
+      {\includegraphics{2.jpg}}
+    \ffigbox[\linewidth]
+      {\caption{Screenshot: Generated Notification}
+      \label{subfig:app-notif}}
+      {\includegraphics{3.jpg}}
+    \end{floatrow}%
+  }
+  {\label{fig:app}}
+\end{figure}
+
+The images have been put in, and they are side by side in the same document on the same page. We have used the package floatrow and graphicx to import images on Page \pageref{fig:app}. The images are from an Android application I made for a project last semester. The table above are values from an experiment we are doing in our lab. I am adding an mathematical equation now just for the sake of it, because I think this is the only thing left to be demonstrated.
+\begin{equation} \label{eq:1}
+NLL = -\sum_{i=1}^{N}log(P(S_i))
+\end{equation}
+where $s_i$ is the length of the $i^{th}$ saccade.
+
+This text will refer to Equation~\ref{eq:1} above. In case you would like to see an alternative method to align the images, for instance images as subfigures, let me try to do it.
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.49\textwidth}
+  \centering
+  \includegraphics[width = 144px]{4.png}
+  \caption{Caption 1}
+  \label{fig:capl}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+  \centering
+  \includegraphics[width = 144px]{5.jpg}
+  \caption{Caption 2}
+  \label{fig:capr}
+\end{subfigure}
+  \caption{Caption for this figure with two images}
+  \label{fig:cap}
+\end{figure}
+
+This is another alternative to posting images in a \LaTeX Document, although you would still want me to put them in a table, since `The Document' had them in a table. Let me try to do that.
+\begin{table}[H]
+\caption{Table with images, finally!}
+\centering
+\begin{tabular} {c c}
+  \includegraphics{6.jpg} &\includegraphics{6.jpg} \\
+  \includegraphics{7.jpg} &\includegraphics{7.jpg} \\
+\end{tabular}
+\end{table}
+
+Now, that we have all the possible ways multiple images can be aligned in the table. We will conclude this document with the final section.
+
+\section*{Conclusion}
+\label{sec:conclusion}
+This document comprehensively demonstrated the capabilities of \LaTeX as a document typesetting / desktop publishing package. We have used various font size / family settings, we have used verbatim to display Latex code in a latex document, image settings, sections, subsections, references using labels, mathamatical equations, notations, use of `dia' for creating a diagram / flowchart etc. I hope this suffices the need of learning basic \LaTeX. I hope you also notice that the last section i.e. Conclusion on Page~\pageref{sec:conclusion} is unnumbered and displays the use of something.
+
+%References
+\begin{thebibliography}{1}
+\bibitem{indowordnet} 
+Pushpak Bhattacharyya.
+Indowordnet. In \textit{The WordNet in Indian Languages}, pages 1--18. Springer, 2017.
+\end{thebibliography}
+\end{document}

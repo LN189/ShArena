@@ -1,0 +1,9 @@
+{% block content %}
+<a href="{% url 'newproject' user %}">create project</a>
+  <h1> project List</h1>
+  {% for project in projects %}
+    <div class="project">
+       	<h1><a href="{% url 'fileslist' user project.title %}">{{project.title}}</a> </h1>
+    </div>
+  {% endfor %}
+{% endblock content %}

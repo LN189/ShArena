@@ -1,0 +1,33 @@
+{% load friendshiptags %}
+<p> awdignasingiasdfv</p>
+{% block title %}Friends for {{ username }}{% endblock %}
+{% block content %}
+	<h2> Friend List </h2>
+	 <ul class="friends">
+      {% for friend in friends %}
+        <li><a href="">
+          {{ friend.username }}</a></li>
+      {% endfor %}
+    </ul>
+    <h2> unread requests </h2>
+    	<ul class="unread_requests">
+      {% for friend in unread %}
+        <li><a href="{% url 'acceptfriend' friend.to_user friend.from_user %}">
+          {{ friend.from_user }}</a></li>
+      {% endfor %}
+    </ul>
+    <h2> sent requests </h2>
+    	<ul class="sent_requests">
+      {% for friend in sent %}
+        <li><a href="">
+          {{ friend.to_user }}</a></li>
+      {% endfor %}
+    </ul>
+     <h2> user List </h2>
+    <ul class="users">
+      {% for user in users %}
+        <li><a href="{% url 'addfriend' username user.username %}">
+          {{ user.username}}</a></li>
+      {% endfor %}
+    </ul>
+{% endblock content %}

@@ -2,7 +2,8 @@ from django.shortcuts import render,reverse,redirect,get_object_or_404
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView,DetailView
 from .models import project, projectform,textfile,textfileForm
-
+import os,sys
+from django.conf import settings
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -38,7 +39,7 @@ def new_project(request,username):
 		form = projectform()
 	return render(request,'user_login/newproject.html',{'form' : form})
 
-def files_view(request,username,project):
+def upload_file(request,username,project):
 	user=get_object_or_404(User,username=username)
 	pro=project
 	if request.method == 'POST':
@@ -53,5 +54,12 @@ def files_view(request,username,project):
 		form = textfileForm()
 	return render(request, 'user_login/uploadfile.html', {'form': form})
 
+def files_view(request,username,project):
+	user = username
+	pro = project
+	cwd = os.getcwd()
+	print(cwd)
+	path = 'media/user_' + str(user) + '/' + str(pro) + '/'
+	files = os.listdir(path)
+	return render(request,'user_login/projectdetails.html',{'files' : files,'user' : user , 'pro' :pro})		
 
-		

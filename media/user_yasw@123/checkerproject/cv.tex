@@ -1,0 +1,168 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[a4paper,bottom = 0.5in,left = 0.75in,right = 0.75in,top = 0.5in]{geometry}
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}	
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[SmallCapsFont = Fontin-SmallCaps.otf,BoldFont = Fontin-Bold.otf,ItalicFont = Fontin-Italic.otf]{Fontin.otf}
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{2pt}{3pt}
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+\begin{document}
+\pagestyle{empty}
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+\vspace*{45mm}
+Pursuing Minor in \textbf{Applied Statistics and Informatics}
+\vspace{-8pt}
+\section{Academic Achievements}
+ \begin{itemize}
+     \item Department Rank \textbf{2} in the batch of 120 students\hfill\textsc{Presently}
+     \item Awarded AP grade for exceptional performance in \textbf{Data Structures and Algorithms}, \textbf{Calculus}, \textbf{Physical} \textbf{Chemistry} and \textbf{Quantum Physics and Application} courses
+     \item \textbf{Institute Academic Award}, IIT Bombay for exceptional academic performance\hfill 2016
+     \item Secured \textbf{All India Rank 4} in IIT JEE Mains among over 1.3 million candidates\hfill2015
+     \item Secured \textbf{All India Rank 58} in IIT JEE Advanced among approx. 150 thousand candidates\hfill2015
+     \item Received certificate of merit and a letter of appreciation from the Hon'ble HRD Minister of India for being in the \textbf{top 0.1}\% in \textbf{Chemistry} and \textbf{Mathematics}, All India Senior Secondary Examination\hfill 2015
+     \item CL Bhat award for \textbf{best overall} performance in Astronomy OCSC \hfill 2014
+     \item \textbf{Infosys Award} for performance in international olympiads \hfill 2012,13,14,15
+     \item  \textbf{KVPY} (Kishore Vaigyanik Protsahan Yojna) Fellowship by Govt. of India with \textbf{All India Rank 15}\hfill 2014
+    %  http://kvpy.iisc.ernet.in/main/resources/2013-fellowships/SA_General%20Merit.pdf
+     \item  \textbf{NTSE} (National Talent Search Examination) Scholarship by NCERT. New Delhi with \textbf{All India Rank 6} \hfill 2011
+    %  \item Awarded Gold Certificate for securing \textbf{All India Rank 2} in \textbf{Technothlon}, An International Aptitude School Championship conducted by \textbf{IIT Guwahati} and $ \mathbf{3^{rd}} $ \textbf{overall} in the final round held in Guwahati. \hfill 2012
+    %  \item \textbf{Gold Medal} in Young Genius Physics Tournament(YGPT) organised by Indian Association Of Physics Teachers Regional Council - 6 (IAPTRC6) \hfill 2014
+\item International Olympiads
+\begin{itemize}
+    \item \textbf{Silver Medalist} at $46^{th}$ International Physics Olympiad , Mumbai, India\hfill 2015
+    \item \textbf{Gold Medalist} at $8^{th}$ International Olympiad in Astronomy and Astrophysics, Suceava, Romania \hfill 2014
+    \item \textbf{Bronze Medalist} at $7^{th}$ International Olympiad in Astronomy and Astrophysics, Volos, Greece\hfill 2013
+    \item \textbf{Silver Medalist} at $17^{th}$ International Astronomy Olympiad, Gwangju, South Korea \hfill 2012
+    % \item \textbf{Gold Medal} for being in top 35 students in Indian National Chemistry Olympiad \hfill 2015
+    % \item Among the top 300 in INPhO, Indian National Physics Olympiad  \hfill 2014
+    % \item Qualified for Indian National Mathematics Olympiad (RMO) \hfill 2014
+\end{itemize}
+\end{itemize}
+% \section{Scholarships and Awards}
+%  \begin{itemize}
+     
+%  \end{itemize}
+\vspace{-6pt}
+\section{Research Projects}
+\textbf{Termination Analysis of probabilistic programs using LexRSM} \hfill \textit{Summer 2017}\\
+\textit{Prof. Krishnendu Chatterjee, IST Austria}
+\begin{itemize}
+    \item Implemented a Lexicographic Ranking Supermartingale (LexRSM) finding algorithm in C++
+    \item Generates invariants for each node of probabilistic Control Flow Graph using Aspic after parsing the textual program
+    \item Uses Farkas' lemma to transform the universally quantified conditions on LexRSM for it's existence into linear programming constraints and then solves them using CPLEX, a linear programming solver
+    \item A research paper for the same submitted at POPL '18
+\end{itemize}
+\textbf{Photometric Redshifts using Machine Learning} \hfill \textit{Spring 2017}\\
+\textit{Prof. Vikram Rentala (Course Project)} \hfill \textit{Astrophysics}
+\begin{itemize}
+    \item Estimated Photometric Redshifts using artificial neural networks and k-nearest neighbours
+\vspace{-2pt}
+    \item Combined the spectroscopic data from PRIMUS and VIPERS survey for high redshift galaxies, and obtained photometric data from SDSS for these galaxies
+\end{itemize}
+\vspace{-6pt}
+\section{Key Projects}
+\textbf{Chatting Application} \hfill \textit{Spring 2017}\\
+\textit{Prof. Varsha Apte (Course Project)} \hfill \textit{Computer Networks}
+\begin{itemize}
+    \item Made a chatting application using socket programming in C++. Used \textbf{ncurses} library for GUI
+    % \item Requires LDAP Authentication to login into the application
+    \item Real time updation of last seen times of the people on the network. Also made it compatible to send text files
+\end{itemize}
+\textbf{ATM Controller Logic Design} \hfill \textit{Spring 2017}\\
+\textit{Prof. Supratik Chakraborty (Course Project)} \hfill \textit{Digital Logic Design}
+\begin{itemize}
+    \item Designed a working logical model of ATM machine in VHDL and tested it by mapping it on FPGA board
+    \item Made a backend in C to perform password checks, balance updates and issue instructions to the ATM Controller
+    \item Uses Tiny Encryption Algorithm for secure communication with backend
+\end{itemize}
+\textbf{Feed’er: Academic Assistant} \hfill \textit{Autumn 2016}\\
+\textit{Prof. Sharat Chandran (Course Project)} \hfill \textit{Software Systems Lab}
+\begin{itemize}
+    \item Designed an \textbf{android based} application for students and a django based web application for professors
+    \item Login/signup can be done with Facebook or manually
+    \item The app notifies about the assignment deadlines, feedback, exams which are set by the instructor of the course using the web app. It displays the customized calendar of the student
+\end{itemize}
+\textbf{Other Projects}
+\begin{itemize}
+    \item \textbf{e-commerce handling platform in c++} \textit{(Course Project)} \hfill \textit{CS101 - Autumn 2015}\\
+    Project based on fstream library of C++ to maintain a database of product details and user accounts. Suggests the user best buy for a product category based on several criteria and keeps track of transaction details through transaction ids
+    \item \textbf{Song Recommendation Engine} \hfill \textit{Microsoft Code.Fun.Do 2016.}\\ An android app which detects user's mood and recommends songs based on their lyrics
+    \item \textbf{Ray Messenger}\hfill\textit{Lenovo India Gaming Week 2015}\\A game built using \textbf{GamePy graphics library}. It simulated a stellar rescue in the form of a game
+    % \item \textbf{Movie recommendation engine} built in \textbf{Python} to recommend users which movie to watch using \textbf{Collaborative Filtering} technique.
+    % \item Ranked various mutual fund companies in \textbf{R} by analysing their past data.(Power-transformed the given data so that it passes Shapiro-Wilk test)
+\end{itemize}
+% \vspace{-5pt}
+\section{Positions Of Responsibility}
+\textbf{Department Academic Mentor} \hfill \textit{July 2017 onwards}
+\begin{itemize}
+    \item Volunteering to assist 7 Sophomores, enabling them to cope up with the curriculum
+\end{itemize}
+\textbf{Teaching Assistant for}
+\begin{itemize}
+    \item Computer Programming and Utilization course under Prof. Umesh Bellur \hfill \textit{Spring '17}
+    \item Advanced Calculus course under Prof. A.K. Pani \hfill \textit{Autumn '16}
+\end{itemize}
+\textbf{Academic Resource Person}\hfill\textit{Summer 2016}
+\begin{itemize}
+    \item Student facilitator for mentoring and evaluating students at Astronomy OCSC 2016
+    % \item Generated and evaluated questions for the selection procedure
+\end{itemize}
+\textbf{Academic Team Member} \hfill \textit{December 2016}
+\begin{itemize}
+    \item Part of academic team for International Olympiad in Astronomy and Astrophysics 2016 held in Bhubaneswar
+\end{itemize}
+\textbf{Batch Representative} \hfill \textit{July 2016 - May 2017}
+\begin{itemize}
+    \item Represented CSE class of 2019 in CSE Department UG Council and other Intra Dept. Events
+\end{itemize}
+% \section{Technical Skills}
+% \begin{tabular}{rl}
+%  Programming languages: & C++, Python, Java, MATLAB, GNU Octave, AWK, bash, R\\
+%  Software Sills: & Git, \LaTeX, Inkscape, CMake, AutoCAD, SolidWorks\\
+%  Development: & HTML, CSS, JavaScript, Django , AndroidStudio
+% \end{tabular}
+\vspace{-5pt}
+\section{Key Courses Undertaken}
+\begin{tabular}{rl}
+
+\textbf{Computer Science} & Software \& Systems Lab, Computer Networks, Automata Theory**, Logic in Computer
+\\  & Science, Implementation of Programming Languages**, Artificial Intelligence**, 
+\\ & Operating Systems*, Data Structures \& Algorithms, Discrete Structures, Digital Logic
+\\ & Design, Design and Analysis of Algorithms,  Data Analysis and Interpretation,  
+\\ & Abstractions and Paradigms in Programming, Computer Architecture*, Database
+\\ & and Information Systems*, Digital Image Processing*\\
+    \textbf{Statistics} & Probability Theory, Introduction to Derivative Pricing, Statistical Inference* \\
+	\textbf{Mathematics} & Calculus, Linear Algebra, Differential Equations \hfill **{\it to be completed by April 2018}\\
+ \end{tabular}
+    %  \hspace*{110mm}\hfill{{\sl **{\it to be completed by April 2018}}}
+   \hspace*{110mm}\hfill{{\sl *{\it to be completed by December 2017}}}
+\vspace{-15pt}
+\section{Extracurricular Activities}
+\begin{itemize}
+    \item \textbf{Delivered lecture} on Stellar Structure and Evolution at Krittika, the Astronomy Club, IITB
+    \item \textbf{Stood first} in Physics Bazinga (Quiz organised by Maths and Physics Club) in 2015,16
+    \item Completed \textbf{Mountaineering and Adventure course}, under Jawahar Institute Of Mountaineering, Jammu And Kashmir.
+    \item Runners up in Astronomy GC 2015,2016 representing Hostel 5
+    % \item Represented Hostel 5 at Carrom GC 2015
+    \item Associated with National Service Scheme, IIT Bombay under Vikas program in 2015
+\end{itemize}
+\end{document}

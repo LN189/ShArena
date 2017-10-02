@@ -54,12 +54,26 @@ def upload_file(request,username,project):
 		form = textfileForm()
 	return render(request, 'user_login/uploadfile.html', {'form': form})
 
-def files_view(request,username,project):
+def files_view(request,username,projectname):
 	user = username
-	pro = project
-	cwd = os.getcwd()
-	print(cwd)
+	curruser = get_object_or_404(User,username=username)
+	pro = projectname
+	pro1 = project.objects.filter(authors__in=[curruser])
+	print(pro1)
+	currpro = get_object_or_404(pro1,title=pro)
+	members=currpro.authors.all()
+	#try:
+	#	members=project.objects.get(title=pro)
+	#except project.MultipleObjectsReturned:
+	#	i=0;
+	#	while(i>=0):
+	#		members=project.objects.get(title=pro).order_by('id')[0]
+	#		if members.objects.authors__in==[user]:
+	#			break
 	path = 'media/user_' + str(user) + '/' + str(pro) + '/'
-	files = os.listdir(path)
-	return render(request,'user_login/projectdetails.html',{'files' : files,'user' : user , 'pro' :pro})		
+	try:
+		files = os.listdir(path)
+	except FileNotFoundError:
+		files=[]
+	return render(request,'user_login/projectdetails.html',{'files' : files,'user' : user , 'pro' :pro, 'members' : members})		
 

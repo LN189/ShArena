@@ -1,9 +1,13 @@
 {% block content %}
 <a href="{% url 'uploadfile' user pro %}"> upload file</a>
-<h1> file List</h1>
+<h1>File List of {{user}} in {{pro}} </h1>
   {% for file in files %}
     <div class="files">
        	<h1><a href="">{{file}}</a> </h1>
     </div>
+  {% endfor %}
+<h1>Members Associated</h1>
+  {% for member in members %}
+	<h1><a href="{% url 'fileslist' member.username pro %}">{{member.username}}</a></h1>
   {% endfor %}
 {% endblock content %}

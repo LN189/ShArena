@@ -1,5 +1,5 @@
 {% load friendshiptags %}
-<p> awdignasingiasdfv</p>
+<a href = "{% url 'logout' %}">logout</a>
 {% block title %}Friends for {{ username }}{% endblock %}
 {% block content %}
 	<h2> Friend List </h2>
@@ -12,22 +12,34 @@
     <h2> unread requests </h2>
     	<ul class="unread_requests">
       {% for friend in unread %}
+		<h3> {{ friend.from_user }} </h3>
         <li><a href="{% url 'acceptfriend' friend.to_user friend.from_user %}">
-          {{ friend.from_user }}</a></li>
+			accept</a></li>
+		<li><a href="{% url 'declinefriend' friend.to_user friend.from_user %}">
+			decline</a></li>
       {% endfor %}
     </ul>
     <h2> sent requests </h2>
     	<ul class="sent_requests">
       {% for friend in sent %}
         <li><a href="">
-          {{ friend.to_user }}</a></li>
+          {{ friend.username }}</a></li>
       {% endfor %}
     </ul>
      <h2> user List </h2>
     <ul class="users">
       {% for user in users %}
+		{% if user.username != username%}
+		<h4> {{ user.username}} </h4>
+		{% if user in friends %}
+		<h5> friends </h5>
+		{% elif user in sent %}
+		<h5> request send</h5>
+		{% else %}
         <li><a href="{% url 'addfriend' username user.username %}">
-          {{ user.username}}</a></li>
+         send request</a></li>
+		{% endif %}
+		{% endif %}
       {% endfor %}
     </ul>
 {% endblock content %}

@@ -8,6 +8,8 @@
   {% endfor %}
 <h1>Members Associated</h1>
   {% for member in members %}
-	<h1><a href="{% url 'fileslist' member.username pro %}">{{member.username}}</a></h1>
+  {% if user != member.username %}
+	<h1><a href="{% url 'listfilesofauthor' member.username pro %}">{{member.username}}</a></h1>
+  {% endif %}
   {% endfor %}
 {% endblock content %}

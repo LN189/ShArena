@@ -5,6 +5,7 @@ from django.views.generic import ListView,DetailView
 from .models import project, projectform,textfile,textfileForm
 import os,sys
 from django.conf import settings
+from friendship.models import Friend
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -25,8 +26,6 @@ class groups_view(ListView):
 		user = get_object_or_404(User,username=username)		
 		pro = project.objects.filter(authors__in=[user]).values()
 		l = [x for x in pro]
-		print(l)
-		print(4)
 		return render(request,template_name,{'projects' : pro})
 	
 @login_required(login_url='/users/login/')
@@ -62,6 +61,8 @@ def files_view(request,username,projectname):
 	user = username
 	curruser = get_object_or_404(User,username=username)
 	pro = projectname
+	friends = Friend.objects.friends(curruser)
+	print(friends)
 	pro1 = project.objects.filter(authors__in=[curruser])
 	print(pro1)
 	currpro = get_object_or_404(pro1,title=pro)
@@ -79,7 +80,7 @@ def files_view(request,username,projectname):
 		files = os.listdir(path)
 	except FileNotFoundError:
 		files=[]
-	return render(request,'user_login/projectdetails.html',{'files' : files,'user' : user , 'pro' :pro, 'members' : members})		
+	return render(request,'user_login/projectdetails.html',{'friends' : friends,'files' : files,'user' : user , 'pro' :pro, 'members' : members})		
 
 @login_required(login_url='/users/login/')
 def list_files(request,username,projectname):
@@ -92,7 +93,15 @@ def list_files(request,username,projectname):
 		files = []
 	return render(request,'user_login/files_details.html',{'files' : files , 'user' : user , 'pro' : pro})
 				  
-				  
+def add_member(request,username,projectname,to_username):
+	pro = projectname
+	curruser = get_object_or_404(User,username = username)
+	projects = project.objects.filter(authors__in = [curruser])
+	currpro = get_object_or_404(projects,title = pro)
+	to_user =  get_object_or_404(User,username = to_username)
+	currpro.authors.add(to_user)
+	return HttpResponseRedirect(reverse('fileslist',args=[curruser.username,pro]))
+	
 				  
 				  
 				  

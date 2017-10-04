@@ -6,6 +6,16 @@
        	<h1><a href="">{{file}}</a> </h1>
     </div>
   {% endfor %}
+
+<h1>Friends List of {{user}} </h1>
+  {% for friend in friends %}
+  {% if friend not in members%}
+    <div class="files">
+       	<h1><a href="{% url 'addmember' user pro friend.username %}">{{friend.username}}</a> </h1>
+    </div>
+    {% endif %}
+  {% endfor %}
+  
 <h1>Members Associated</h1>
   {% for member in members %}
   {% if user != member.username %}

@@ -1,0 +1,11 @@
+1. Output of  python script is 
+	b'\tHere is the Vault code: 127f44f4a61c0a94e1f300c2d78f1624'
+2. Output after executing ./vault <key>
+	Here is your Orb: 
+	 /___/\
+	//o  \_\
+	\\  // /
+	 \\ / /
+	  \X /
+	   \/
+3. 

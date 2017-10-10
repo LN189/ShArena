@@ -1,0 +1,8 @@
+{% block content %}
+<h1>File List of {{user}} in {{pro}} </h1>
+  {% for file in files %}
+    <div class="files">
+       	<h1><a href="">{{file}}</a> </h1>
+    </div>
+  {% endfor %}
+ {% endblock content %}

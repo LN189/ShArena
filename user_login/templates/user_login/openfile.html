@@ -1,0 +1,21 @@
+<html>
+	<body>
+	<div contenteditable="true" id="textfield">
+		<pre>{{matter}}</pre>
+	</div>
+	<script>
+		var updatedtext = document.getElementById("textfield");
+		$.post("updatedb.php", {
+		   updatedmatter : updatedtext,
+		   username : {{ user }},
+		   projectname : {{ pro }},
+		   filename : {{ filename }},
+		   path : {{ path }}
+		},
+		function(data) {
+		   var x= data.id;//data contains the output from the script
+		   x = 5;//just for komodo not showing errors
+		});
+	</script>
+	</body>
+</html>

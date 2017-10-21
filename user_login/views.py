@@ -12,17 +12,14 @@ from friendship.exceptions import AlreadyExistsError, AlreadyFriendsError, Integ
 def home(request):
     return HttpResponseRedirect(reverse('userdetail',args=[request.user.username]))
 
-@login_required(login_url='/users/login/')
 def user_fri(request,username):
 	user = get_object_or_404(User, username = username)
 	friends = Friend.objects.friends(user)
 	users = User.objects.all()
 	unread = Friend.objects.unread_requests(user)
 	sent = Friend.objects.sent_requests(user)
-	sentfriends = [u.to_user for u in sent]
-	return render(request,'user_login/friends.html', {'username': username,'sent' : sentfriends,'unread' : unread,'friends': friends,'users' : users, 'show_tags': True,'show_user': True})
+	return render(request,'user_login/friends.html', {'username': username,'sent' : sent,'unread' : unread,'friends': friends,'users' : users, 'show_tags': True,'show_user': True})
 
-@login_required(login_url='/users/login/')
 def user_add_friends(request,username,to_user):
 	from_user = get_object_or_404(User, username = username)
 	#friends = Friend.objects.friends(from_user)
@@ -35,7 +32,6 @@ def user_add_friends(request,username,to_user):
 	return redirect('userfriends',username = username)
 	#return render(request,'user_login/friends.html', {'username': username,'friends': friends,'users' : users, 'show_tags': True,'show_user': True})
 
-@login_required(login_url='/users/login/')
 def user_accept_friend(request, username, to_user):
 	from_user = get_object_or_404(User, username = username)
 	#friends = Friend.objects.friends(from_user)
@@ -49,18 +45,6 @@ def user_accept_friend(request, username, to_user):
 		return redirect('userfriends',username = username)
 	return redirect('userfriends',username = username)
 
-@login_required(login_url='/users/login/')
-def user_decline_friend(request, username, to_user):
-    from_user = get_object_or_404(User, username = username)
-    to_use = get_object_or_404(User, username = to_user)
-    try:
-        friend_request = FriendshipRequest.objects.get(from_user = to_use,to_user=from_user)
-        friend_request.cancel()
-        return redirect('userfriends',username = username)
-    except IntegrityError:
-        return redirect('userfriends',username = username)
-
-@login_required(login_url='/users/login/')
 def user_detail(request,username):
 	user = username
 	return render(request,'user_login/user.html')

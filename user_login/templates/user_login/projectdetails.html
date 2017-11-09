@@ -1,25 +1,94 @@
-{% block content %}
-<a href="{% url 'uploadfile' user pro %}"> upload file</a>
-<a href="{% url 'groupChatOpen' pro %}">GroupThread</a>
-<h1>File List of {{user}} in {{pro}} </h1>
-  {% for file in files %}
-    <div class="files">
-       	<h1><a href="{% url 'openfile' user pro file %}">{{file}}</a> </h1>
-    </div>
-  {% endfor %}
-<h1>Friends List of {{user}} </h1>
-  {% for friend in friends %}
-  {% if friend not in members%}
-    <div class="files">
-       	<h1><a href="{% url 'addmember' user pro friend.username %}">{{friend.username}}</a> </h1>
-    </div>
-    {% endif %}
-  {% endfor %}
-  
-<h1>Members Associated</h1>
-  {% for member in members %}
-  {% if user != member.username %}
-	<h1><a href="{% url 'listfilesofauthor' member.username pro %}">{{member.username}}</a></h1>
-  {% endif %}
-  {% endfor %}
-{% endblock content %}
+{% load staticfiles %}
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{% static "user_groups/css/style_projectsPage.css" %}" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.6;background:rgba(255,255,255,1);">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand expand" href="{% url 'logout' %}"style="color: black"><img width=35x height=35px src="{% static "homepage/images/logout.png" %}"></a>
+				</div>
+				<ul class="nav navbar-nav" style="float:right;">
+				<!--	<li> <a class="expand" href="{% url 'userfriends' user %}">Friends</a></li>
+					<li class="dropdown"><a class="dropdown-toggle expand" data-toggle="dropdown" href="academics.html">Academics<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="academics.html#CU">Courses Undertaken</a></li>
+							<li><a href="academics.html#Pro">Projects</a></li>
+							<li><a href="academics.html#Acheivements">Achievements</a></li>
+						</ul>
+					</li>-->
+					<li><a class="expand" href="{% url 'uploadfile' user pro %}"style="color: black;margin-top:5px">+Newfile</a></li>
+					<li><a class="expand" href="{% url 'groupThread' user pro %}"style="color: black;margin-top:5px">GroupThread</a></li>
+					<li><a class="expand" href="{% url 'groups' %}"style="color: black"><img width=35x height=35px src="{% static "homepage/images/groups.png" %}">Groups</a></li>
+					<li><a class="expand" href="{% url 'userdetail' user %}"style="color: black"><img width=35x height=35px src="{% static "homepage/images/home.png" %}"> Home</a></li>
+				</ul>
+			</div>
+		</nav>
+		<br>
+		<br>
+		<div style="margin:150px 250px 150px;background: rgba(175,175,175,0.55);border-radius: 15px;">
+		<br>
+		<h1 align="middle" style="color: white">File List of {{user}} in {{pro}} </h1>
+		<ul class="min">
+			{% for file in files %}
+				{% if file != "No files uploaded yet" %}
+				<li style="font-size: 170%;color:rgb(191, 255, 0)">{{file}}<a href="{% url 'openfile' user pro file %}" class="mine" style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">Open</a>
+				<a href="#" class="mine" onclick='confirmUser("{{file}}")' style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">DeleteFile</a></li>
+				{% block javascript%}
+				<script>
+					 function confirmUser(f){
+							var ask=confirm("Are you sure");
+							var u="{{user}}";
+							var p="{{pro}}"
+							if(ask){
+							  window.location="/groups/"+u+"/"+p+"/"+f+"/delete/";
+							 }
+					}
+				</script>
+				{% endblock javascript%}
+				{% else %}
+				<li><a href="{% url 'uploadfile' user pro %}" class="mine">{{file}} (click here to upload a new file)</a></li>
+				{% endif %}
+		    {% endfor %}
+		</ul>
+		<br>
+		</div>
+		<div style="margin:150px 250px 150px;background: rgba(175,175,175,0.55);border-radius: 15px;">
+			<br>
+			<h1 align="middle" style="color: white">Friends List of {{user}} not in this project</h1>
+			<ul class="min">
+				{% for friend in friends %}
+					{% if friend not in members%}
+						  <li style = "font-size:170%;color:rgb(191, 255, 0)">{{friend.username}} <a href="{% url 'addmember' user pro friend.username %} " class="mine" style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">Add to this Group</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+			<br>
+		</div>
+
+		<div style="margin:150px 250px 150px;background: rgba(175,175,175,0.55);border-radius: 15px;">
+			<br>
+			<h1 align="middle" style="color: white">Members associated</h1>
+			<ul class="min">
+				{% for project in projects %}
+					<li><a href="{% url 'fileslist' user project.title %}" class="mine">{{project.title}}</a></li>
+				{% endfor %}
+				{% for member in members %}
+					{% if user != member.username %}
+					  <li style = "font-size:170%;color:rgb(191, 255, 0)">{{member.username}} <a href="{% url 'listfilesofauthor' user member.username pro %}" class="mine"style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">View files</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+			<br>
+		</div>
+  </body>
+</html>

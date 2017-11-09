@@ -1,8 +1,53 @@
-{% block content %}
-<h1>File List of {{user}} in {{pro}} </h1>
-  {% for file in files %}
-    <div class="files">
-       	<h1><a href="">{{file}}</a> </h1>
-    </div>
-  {% endfor %}
- {% endblock content %}
+{% load staticfiles %}
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{% static "user_groups/css/style_projectsPage.css" %}" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.6;background:rgba(255,255,255,1);">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand expand" href="{% url 'logout' %}"style="color: black"><img width=35x height=35px src="{% static "homepage/images/logout.png" %}"></a>
+				</div>
+				<ul class="nav navbar-nav" style="float:right;">
+				<!--	<li> <a class="expand" href="{% url 'userfriends' user %}">Friends</a></li>
+					<li class="dropdown"><a class="dropdown-toggle expand" data-toggle="dropdown" href="academics.html">Academics<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="academics.html#CU">Courses Undertaken</a></li>
+							<li><a href="academics.html#Pro">Projects</a></li>
+							<li><a href="academics.html#Acheivements">Achievements</a></li>
+						</ul>
+					</li>-->
+					<li><a class="expand" href="{% url 'fileslist' mainUser pro %}"style="color: black;margin-top:5px">{{pro}}</a></li>
+					<li><a class="expand" href="{% url 'groupThread' mainUser pro %}"style="color: black;margin-top:5px">GroupThread</a></li>
+					<li><a class="expand" href="{% url 'groups' %}"style="color: black"><img width=35x height=35px src="{% static "homepage/images/groups.png" %}">Groups</a></li>
+					<li><a class="expand" href="{% url 'userdetail' mainUser %}"style="color: black"><img width=35x height=35px src="{% static "homepage/images/home.png" %}"> Home</a></li>
+				</ul>
+			</div>
+		</nav>
+		<br>
+		<br>
+		<div style="margin: 150px 250px 150px;background: rgba(175,175,175,0.5);border-radius: 15px;">
+		<br>
+		<h1 align="middle" style="color: white">File List of {{user}} in {{pro}} </h1>
+		<ul class="min">
+			{% for file in files %}
+				{% if file != "No files uploaded yet" %}
+				<li style = "font-size:170%;color:rgb(191, 255, 0)">{{file}}<a href="{% url 'othersfile' user pro file %}" class="mine" style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">Open</a></li>
+				{% else %}
+				<li><a href="" class="mine">{{file}}</a></li>
+				{% endif %}
+		    {% endfor %}
+		</ul>
+		<br>
+		</div>
+  </body>
+</html>

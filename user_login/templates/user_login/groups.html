@@ -1,9 +1,91 @@
-{% block content %}
-<a href="{% url 'newproject' user %}">create project</a>
-  <h1> project List</h1>
-  {% for project in projects %}
-    <div class="project">
-       	<h1><a href="{% url 'fileslist' user project.title %}">{{project.title}}</a> </h1>
-    </div>
-  {% endfor %}
-{% endblock content %}
+{% load staticfiles %}
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{% static "user_groups/css/style_projectsPage.css" %}" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.6;background:rgba(255,255,255,1);">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand expand" href="{% url 'logout' %}" style="color: black"><img width=35x height=35px src="{% static "homepage/images/logout.png" %}"></a>
+				</div>
+				<ul class="nav navbar-nav" style="float:right;">
+				<!--	<li> <a class="expand" href="{% url 'userfriends' user %}">Friends</a></li>
+					<li class="dropdown"><a class="dropdown-toggle expand" data-toggle="dropdown" href="academics.html">Academics<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="academics.html#CU">Courses Undertaken</a></li>
+							<li><a href="academics.html#Pro">Projects</a></li>
+							<li><a href="academics.html#Acheivements">Achievements</a></li>
+						</ul>
+					</li>-->
+					<li><a class="expand" href="{% url 'newproject' user %}" style="color: black;margin-top:5px">+NewProject</a></li>
+					<li><a class="expand" href="{% url 'userdetail' user %}" style="color: black"><img width=35x height=35px src="{% static "homepage/images/home.png" %}"> Home</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div style="margin: 150px 250px 150px;background: rgba(175,175,175,0.55);border-radius: 15px;">
+		<br>
+		<h1 align="middle" style="color: white"> Project List</h1>
+		<ul class="min">
+			{% for project in projects %}
+				<li style="font-size: 170%;color:rgb(191, 255, 0)">{{project.title}}<a href="{% url 'fileslist' user project.title %}" class="mine" style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">Open</a>
+				<a href="#" class="mine"style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%" onclick='confirmUser("{{project.title}}")'>Delete</a></li>
+				{% block javascript%}
+				<script>
+					 function confirmUser(p){
+							var ask=confirm("Are you sure to delete ");
+							var u="{{user}}";
+							if(ask){
+							  window.location="/groups/"+u+"/"+p+"/deletep/";
+							 }
+					}
+				</script>
+				{% endblock javascript%}
+			{% endfor %}
+		</ul>
+		<br>
+		</div>
+		<div style="margin:150px 250px 150px;background: rgba(175,175,175,0.55);border-radius: 15px;">
+		<br>
+		<h1 align="middle" style="color: white">Accept Requests</h1>
+		<ul class="min">
+			{% for projects in accept %}
+			<li style="font-size: 170%;color:rgb(191, 255, 0)">{{projects.1}} {{projects.0}}
+			<a href="{% url 'viewprofile' user projects.1 %}" class="mine" style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">View profile</a>
+			<a href="{% url 'accepting' user projects.1 projects.0 %}" class="mine" style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">Accept</a>
+			<a href="{% url 'deleting' user projects.1 projects.0 %}" class="mine" style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">Delete</a></li>
+			{% endfor %}
+		</ul>
+		<br>
+		</div>
+		<div style="margin: 150px 250px 150px;background: rgba(175,175,175,0.55);border-radius: 15px;">
+		<br>
+		<h1 align="middle" style="color: white">Requests Sent</h1>
+		<ul class="min">
+			{% for projects in send %}
+				<li style="font-size: 170%;color:rgb(191, 255, 0)">{{projects}}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		</div>
+		<div style="margin: 150px 250px 150px;background: rgba(175,175,175,0.55);border-radius: 15px;">
+		<br>
+		<h1 align="middle" style="color: white">Send Request</h1>
+		<ul class="min">
+			{% for project1 in allprojects %}
+				<li style="font-size: 170%;color:rgb(191, 255, 0)">{{project1.0}}<a href="{% url 'sendproject' user project1.0 %}" class ="mine" style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%"> send Request </a>
+				<a class="mine" style="padding: .2em .2em .2em .2em;margin-left: 2em;font-size: 90%">{{project1.1}}</a></li>
+			{% endfor %}
+		</ul>
+		<br>
+		</div>
+	</body>
+</html>

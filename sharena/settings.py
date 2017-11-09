@@ -1,3 +1,14 @@
+##@mainpage Sharena
+#@section Introduction
+#ShArena is an online Real time Team collaborating platform where each user has his own work space for each project, can interact with his team mates through a chat box and can view their work on a real #time text editor 
+#@section Team
+#CODE&&SEEK
+#@section Contributors
+#@subsection  Manoj 
+#@subsection  Narayana
+#@subsection  Yaswanth 
+#
+
 """
 Django settings for sharena project.
 
@@ -45,10 +56,13 @@ INSTALLED_APPS = [
     'chat',
     'channels',
     'homepage',
+    'django_private_chat',
+    'custom_app'
+    #'bootstrap',
 ]
 SITE_ID = 1
 
-MIDDLEWARE = [
+l = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -57,6 +71,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CHAT_WS_SERVER_HOST = 'localhost'
+CHAT_WS_SERVER_PORT = 5002
+CHAT_WS_SERVER_PROTOCOL = 'ws'
+
+
+from django import get_version
+from packaging import version
+
+if version.parse(get_version()) < version.parse("1.10"):
+    MIDDLEWARE_CLASSES = l
+else:
+    MIDDLEWARE = l
 
 ROOT_URLCONF = 'sharena.urls'
 
@@ -79,7 +106,7 @@ CHANNEL_LAYERS = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'user_login/templates/'),],
+        'DIRS': [os.path.join(BASE_DIR, 'user_login/templates/'),os.path.join(BASE_DIR, 'django_private_chat/templates/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,15 +165,62 @@ USE_L10N = True
 
 USE_TZ = True
 
+DATETIME_FORMAT = "d.m.Y H:i:s"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "chat/static/"),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "project_static/") 
+STATIC_ROOT = os.path.join(BASE_DIR, "project_static/")
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format':
+                '%(levelname)s %(asctime)s %(module)s'
+                ' %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level': 'INFO',
+        },
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django_private_chat': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        'custom_app': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        }
+    }
+}
+INTERNAL_IPS = ['127.0.0.1', 'localhost']
+SESSION_COOKIE_AGE = 12096000
 LOGIN_REDIRECT_URL = '/profiles/'
 LOGOUT_REDIRECT_URL = '/users/login/'
 MEDIA_URL = '/media/'

@@ -1,0 +1,19 @@
+body {
+  background: url("../images/profileback.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+a.expand{
+	letter-spacing: 2px;
+	color: white;
+	font-size: 130%;
+	transition: all 0.4s ease-in-out;
+}
+a.expand:hover:not(.active){
+	letter-spacing: 5px;
+}
+a.expand:active{
+	font-size:170%;
+}
+a.link:visited{
+text-decoration:none;
+}

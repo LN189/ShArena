@@ -1,6 +1,133 @@
-
+{% load staticfiles %}
 {% load friendshiptags %}
-{% block content %}
-<a href="{% url 'userfriends' user %}">friends</a>
-<a href="{% url 'groups' %}">groups</a>
-{% endblock content %}
+<html>
+	<head>
+		<title>Homepage of {{ user }} </title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{% static "user_groups/css/style_user.css" %}" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body onload="myfun();fun2();">
+		<!-- Header -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.6;color:rgb(10,10,10);">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<li><a class="navbar-brand expand" href="{% url 'logout' %}"><img width=35x height=35px src="{% static "homepage/images/logout.png" %}"></a></li>
+				</div>
+				<ul class="nav navbar-nav" style="float:right;">
+					<li> <a class="expand" href="{% url 'profilepic' user %}" style="margin-top:5px">+ProfilePicture</a></li>
+					<li> <a class="expand" href="{% url 'userfriends' user %}"><img width=35x height=35px src="{% static "homepage/images/friends.png" %}">Friends</a></li>
+					<!--<li class="dropdown"><a class="dropdown-toggle expand" data-toggle="dropdown" href="academics.html">Academics<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="academics.html#CU">Courses Undertaken</a></li>
+							<li><a href="academics.html#Pro">Projects</a></li>
+							<li><a href="academics.html#Acheivements">Achievements</a></li>
+						</ul>
+					</li>-->
+					<li> <a class="expand" href="{% url 'groups' %}"><img width=35x height=35px src="{% static "homepage/images/groups.png" %}">Groups</a></li>
+				</ul>
+			</div>
+		</nav>
+			<div>
+				<div class="container">
+
+					<!-- Logo
+						<h1><a href="#" id="logo">Sharena</a></h1>
+					-->
+					<!-- Nav
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li>
+									<a href="">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+										<li>
+											<a href="">Phasellus consequat</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+												<li><a href="#">Veroeros feugiat</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li>
+								<li><a href="left-sidebar.html">Left Sidebar</a></li>
+								<li><a href="right-sidebar.html">Right Sidebar</a></li>
+								<li><a href="no-sidebar.html">No Sidebar</a></li>
+							</ul>
+						</nav>
+						-->
+
+					<!-- Banner -->
+						{% if status == 0 %}
+							<br>
+							<br>
+							<br>
+							<a href="#"><img id="wgif2" src="{% static "homepage/images/default.jpg" %}"
+								style="position:fixed;top:70px;z-index=1;width:50px;height:50px;border-radius:50%;
+								transition :width 0s,height 0s,right 0s,top 0s,transform 0s;display:block;"></a>
+							<p id="Test2" style="position:fixed;background: rgba(76,175,80,0.9);border-radius: 5px;top: 75px;right: 10px;font-size: 200%;color: white;font-family: GameOfThrones">
+								{{user}}, <img width=25x height=25px style="margin-bottom: 9px" src="{% static "homepage/images/star2.png" %}">{{finalRate}}</p>
+
+							{% else %}
+							<br>
+							<br>
+							<br>
+							<!--<img style="border-radius: 50%" src="/media/admin_images/{{user}}.jpg" width="200px" height="200px" align="left" style="display: block;margin-right: 1px;margin-top: 100px;" alt="">-->
+							<a href="#"><img id="wgif" src="/media/admin_images/{{user}}.jpg"
+								style="position:fixed;top:30%;right:45%;z-index=1;width:200px;height:200px;border-radius:50%;
+								transition :width 3s,height 3s,right 3s,top 3s,transform 3s;display:block;"></a>
+							<p id="Test" style="position:fixed;background: rgba(76,175,80,0.9);border-radius: 5px;top: 75px;right: 10px;white-space: nowrap;font-size: 200%;color: white;font-family: GameOfThrones">{{user}}, <img width=25x height=25px style="margin-bottom: 9px" src="{% static "homepage/images/star2.png" %}">{{finalRate}}</p>
+
+						{% endif %}
+						<script>
+								function myfun(){
+									setTimeout(fun,500);
+								}
+								function fun2(){
+									var str2="{{user}}";
+									var l2=str2.length;
+									var test2 = document.getElementById("Test2");
+									var width2 = (test2.clientWidth + 18) + "px";
+									document.getElementById("wgif2").style.right=width2;
+								}
+								function fun(){
+									var str="{{user}}";
+									var l=str.length;
+									var test = document.getElementById("Test");
+									var width = (test.clientWidth + 18) + "px";
+									document.getElementById("wgif").style.width="50px";
+									document.getElementById("wgif").style.height="50px";
+									document.getElementById("wgif").style.right=width;
+									document.getElementById("wgif").style.top="70px";
+									//document.getElementById("wgif").style.transform="translate(1400%,00px)";-->
+								}
+						</script>
+						<div align="middle">
+							<div class="container" style="padding-left: 300px;padding-right: 300px">
+								<section>
+									<div class="container">
+							<div class="down" style="text-shadow: 3px 3px 4px grey">
+								<p>Welcome  {{user}} </p>
+								<p style="font-size: 50%">Make friends,interact with them start your own projects, work on them as a team and explore!!</p>
+							</div>
+						</div>
+								</section>
+							</div>
+						</div>
+
+				</div>
+			</div>
+	</body>
+</html>

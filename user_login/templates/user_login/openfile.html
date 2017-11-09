@@ -1,21 +1,372 @@
+{% load staticfiles %}
 <html>
-	<body>
-	<div contenteditable="true" id="textfield">
-		<pre>{{matter}}</pre>
-	</div>
-	<script>
-		var updatedtext = document.getElementById("textfield");
-		$.post("updatedb.php", {
-		   updatedmatter : updatedtext,
-		   username : {{ user }},
-		   projectname : {{ pro }},
-		   filename : {{ filename }},
-		   path : {{ path }}
-		},
-		function(data) {
-		   var x= data.id;//data contains the output from the script
-		   x = 5;//just for komodo not showing errors
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Sharena Collaborative Text Editor</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="{% static "user_groups/css/openfile.css" %}" rel="stylesheet"></link>
+		<script src="{% static "user_groups/js/undo.js" %}"></script>
+		<script src="{% static "user_groups/js/jquery-1.5.1.js" %}"></script>
+
+    </head>
+	  <body style="border:none;padding:0px;margin:0px">
+	<script src="{% static "user_groups/js/app.js" %}"></script>
+		<div style="width:70%;height:100%;margin:0px 0px 0px 0px;padding: 0px 0px 0px 0px;border: 0px;float:left;background:rgba(175,175,175,0.8)">
+			<!-- <div style="text-align:center">
+				<button class="undo" href="#" align="middle">Undo</button>
+				<button class="redo" href="#" align="middle">Redo</button>
+			</div> -->
+			<pre onkeyup="fun()" contenteditable="true" id="text" style="padding:10px 10px 10px 10px;font-size:120%;line-height: 1.1em;margin: 35px 100px 100px 100px;background:white;min-height:90%;box-shadow: 10px 10px 5px #888888;">{{matter}}</pre>
+		</div>
+
+		<div style="width:30%;float:right;text-align:center">
+			<br>
+			<button class="undo" href="#">Undo</button>
+			<button class="redo" href="#">Redo</button>
+			<br>
+			<br>
+			<br>
+			<div style="margin:10px 10px 10px 10px;padding:5px 5px 5px 5px;border: 1px solid grey;border-radius:10px">
+				<span style="text-align:center;color:blue;font-size:150%">Chat box</span>
+				<input type="text" id="myInput" onkeyup="myFunction()" style="margin-right:30px;margin-left:30px;" placeholder="Search for names.." title="Type in a name">
+				<ul id = "myUL">
+				{% for member in members %}
+					<li style="margin: 0px 30px 0px"><a href="#" onclick ='myfunc("{{member.username}}")'>{{member.username}}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div style="margin:10px 10px 10px 10px;padding:5px 5px 5px 5px;border: 1px solid grey;border-radius:10px;">
+				<span style="text-align:left;color:blue;font-size:150%">MergeForm</span><br>
+			 Title:
+			  <input type="text" id="Title" value="">
+			  <br>
+				<br>
+			  To_user:
+			  <select id ="to_user" onclick="list(this.value)">
+			  {% for member in members%}
+			  {% if member.username != username%}
+			  <option value = "{{member.username}}"> {{member.username}}</option>
+			  {% endif %}
+			  {% endfor %}
+			  </select>  <br><br>
+			  filename
+			  <select id ="filename">
+			  {% for file in files%}
+			  <option value = "{{file}}"> {{file}}</option>
+			  {% endfor %}
+			  </select>  <br><br>
+
+			  <input type="submit" value="Submit" onclick="mergefun()"><br><br>
+			</div>
+			<div style="margin:10px 10px 10px 10px;padding:5px 5px 5px 5px;border: 1px solid grey;border-radius:10px;">
+				<span style="text-align:left;color:blue;font-size:150%">MergeRequests</span><br>
+		{% for m in ms %}
+		  <h2> From <span id="user" >{{m.from_user}}</span> Title {{m.title}} </h2>
+		  <button onclick='visible("{{m.from_user}}{{m.title}}")'>view</button>
+		  <button onclick='confirmUser("{{m.from_user}}","{{m.title}}")'>delete</button>
+		  <button onclick='merge("{{m.from_user}}","{{m.title}}","accept")'>accept </button>
+		  <pre id="{{m.from_user}}{{m.title}}" style="display: none;">{{m.data}}</pre>
+		  {% endfor %}
+			<br>
+			<br>
+		</div>
+		</div>
+{% block javascript %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+	function myfunc(u){
+		var mywidow = window.open("/chat/dialogs/"+u,u, "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
+		mywidow.document.title="chat";
+	}
+	function confirmUser(u,p){
+		 var ask=confirm("Are you sure to delete this Merge request");
+		 if(ask){
+			 merge(u,p,"delete");
+			}
+ }
+	function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
+	}
+	function visible(id){
+    var id1 = id;
+    var dis = document.getElementById(id1).style.display
+    //document.write(dis);
+    if (dis == "none") {
+      document.getElementById(id1).style.display = "block";
+    }
+    else{
+      document.getElementById(id1).style.display = "none";
+    }
+  }
+	function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+	}
+	  function merge(usern,tit,mode){
+    var csrftoken = getCookie('csrftoken');
+    //document.write(csrftoken);
+    var username = usern;
+    var title1 = tit;
+    var id = username + title1;
+    var updatedtext = document.getElementById(id).innerText;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        if(this.responseText == "deleted"){
+          location.reload()
+        }
+        else{
+          document.getElementById("text").innerHTML = this.responseText;
+        }
+        }
+      };
+
+    xhttp.open("POST","mergetype/", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+    xhttp.send("matter="+updatedtext+"&user="+username+"&title1="+title1+"&type="+mode);
+  }
+
+  // function funload(){
+  //   var csrftoken = getCookie('csrftoken');
+  //   //document.write(csrftoken);
+  //   //var updatedtext = document.getElementById("text").innerText;
+  //   var xhttp = new XMLHttpRequest();
+  //     xhttp.onreadystatechange = function() {
+  //       if (this.readyState == 4 && this.status == 200) {
+  //           document.getElementById("text").html(this.responseText);
+	// 					//document.getElementById("text").innerHTML = this.responseText;
+  //           funload();
+  //       }
+  //     };
+  //     xhttp.open("POST","view/", true);
+  //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //     xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+  //     xhttp.send("&pat={{path}}");
+  // }
+
+	function fun(){
+		var csrftoken = getCookie('csrftoken');
+		//document.write(csrftoken);
+		var updatedtext = document.getElementById("text").innerText;
+		var xhttp = new XMLHttpRequest();
+		//dcocument.write(updatedtext);
+		//document.getElementById("text").innerHTML = updatedtext;
+  		xhttp.onreadystatechange = function() {
+    		if (this.readyState == 4 && this.status == 200) {
+	      		//document.getElementById("text").textarea.html(this.responseText);
+            //document.getElementById("text").innerHTML = this.responseText;
+    		}
+  		};
+  		xhttp.open("POST","display/", true);
+  		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  		xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+  		xhttp.send("updatedmatter="+updatedtext+"&path={{path}}");
+	}
+
+
+
+
+	function mergefun(){
+    var csrftoken = getCookie('csrftoken');
+    //decodeURIComponentent.write(csrf_tokenn);
+    var text = document.getElementById("text").innerText;
+    var to_user = document.getElementById("to_user").value;
+    var from_user = "{{ username }}";
+    var Title = document.getElementById("Title").value;
+    //document.write(to_user);
+    var filename = document.getElementById("filename").value;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          //document.getElementById("textfield").innerHTML = this.responseText;
+        if (this.responseText == "No Title"){
+          alert("TItle not selected")
+        }
+        else if (this.responseText == "No To_user"){
+          alert("TO_user not selected")
+        }
+        else if (this.responseText == "No filename"){
+          alert("file not selcted")
+        }
+        }
+      };
+    xhttp.open("POST","merge/", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+    xhttp.send("title1="+Title+"&to_user1="+to_user+"&filename1="+filename+"&from_user1="+from_user+"&data1="+text);
+  }
+
+
+  function list(usernam){
+    var csrftoken = getCookie('csrftoken');
+    //document.write(csrftoken);
+    //var updatedtext = document.getElementById("textfield").innerText;
+    var user = usernam
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          //document.getElementById("filename").files = result[0];
+          var str = this.responseText;
+          var data = JSON.parse(str);
+          //document.write(data[0]);
+          //console.log(data);
+          //location.reload();
+          var select = document.getElementById("filename");
+          $('#filename').empty();
+          // for (var i=0;i<select.options.length;i++){
+          //   //document.write(select.options.length);
+          //   select.remove(i);
+          // }
+          //select.options[0] = null;
+          for (var x=0 ;x<data.length;x++){
+            var option = document.createElement("option");
+            option.text = data[x];
+            option.value = data[x];
+            select.appendChild(option);
+          }
+        }
+      };
+
+    xhttp.open("POST","mergefiles/", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.setRequestHeader("dataType","json");
+    xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+    xhttp.send("usernam="+user);
+  }
+
+
+
+	$(function() {
+		var stack = new Undo.Stack(),
+			EditCommand = Undo.Command.extend({
+				constructor: function(textarea, oldValue, newValue) {
+					this.textarea = textarea;
+					this.oldValue = oldValue;
+					this.newValue = newValue;
+				},
+				execute: function() {
+				},
+				undo: function() {
+					this.textarea.html(this.oldValue);
+				},
+
+				redo: function() {
+					this.textarea.html(this.newValue);
+				}
+			});
+		stack.changed = function() {
+			stackUI();
+		};
+
+		var undo = $(".undo"),
+			redo = $(".redo"),
+			dirty = $(".dirty");
+		function stackUI() {
+			undo.attr("disabled", !stack.canUndo());
+			redo.attr("disabled", !stack.canRedo());
+			dirty.toggle(stack.dirty());
+		}
+		stackUI();
+
+		$(document.body).delegate(".undo, .redo, .save", "click", function() {
+			var what = $(this).attr("class");
+			stack[what]();
+      var csrftoken = getCookie('csrftoken');
+    //document.write(csrftoken);
+    var updatedtext = document.getElementById("text").innerText;
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            //document.getElementById("textfield").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("POST","display/", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+      xhttp.send("updatedmatter="+updatedtext+"&path={{path}}");
+			return false;
 		});
+
+		var text = $("#text"),
+			startValue = text.html(),
+			timer;
+		$("#text").bind("keyup", function() {
+			// a way too simple algorithm in place of single-character undo
+			clearTimeout(timer);
+			timer = setTimeout(function() {
+				var newValue = text.html();
+				// ignore meta key presses
+				if (newValue != startValue) {
+					// this could try and make a diff instead of storing snapshots
+					stack.execute(new EditCommand(text, startValue, newValue));
+					startValue = newValue;
+				}
+			}, 250);
+		});
+
+		$(".bold").click(function() {
+			document.execCommand("bold", false);
+			var newValue = text.html();
+			stack.execute(new EditCommand(text, startValue, newValue));
+			startValue = newValue;
+		});
+
+		$(document).keydown(function(event) {
+			if (!event.metaKey || event.keyCode != 90) {
+				return;
+			}
+			event.preventDefault();
+			if (event.shiftKey) {
+				stack.canRedo() && stack.redo()
+			} else {
+				stack.canUndo() && stack.undo();
+			}
+		});
+	});
+	// $(document).ready(fun(){
+ //    	$("#textfield").onkeyup(fun(){
+ //    		var updatedtext = $("#textfield").text();
+	//         $.post("updatedb.php",
+ //        	{
+ //          		updatedmatter : updatedtext;
+ //          		path : {{ path }};
+
+ //        	},
+ //        	function(data,status){
+ //            	//alert("Data: " + data + "\nStatus: " + status);
+	//             $("#textfield").text(data);
+ //        	});
+ //    	});
+	// });
 	</script>
+{% endblock javascript %}
 	</body>
 </html>

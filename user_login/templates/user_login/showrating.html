@@ -1,0 +1,139 @@
+{% load staticfiles %}
+{% load friendshiptags %}
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{% static "user_groups/css/style_rate.css" %}" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		function dis(id){
+			var i = id;
+			//console.log(i);
+			var dis = document.getElementById(i).style.display;
+			if (dis == "inline-block"){
+				document.getElementById(i).style.display = "none";
+			}
+			else{
+				document.getElementById(i).style.display = "inline-block";
+			}
+			var d = document.getElementById("butt"+i).style.display;
+			if (d == "inline-block"){
+				document.getElementById("butt"+i).style.display = "none" ;
+			}
+			else {
+				document.getElementById("butt"+i).style.display = "inline-block";
+			}
+		}
+		function getCookie(name) {
+			var cookieValue = null;
+			if (document.cookie && document.cookie !== '') {
+					var cookies = document.cookie.split(';');
+					for (var i = 0; i < cookies.length; i++) {
+							var cookie = jQuery.trim(cookies[i]);
+							// Does this cookie string begin with the name we want?
+							if (cookie.substring(0, name.length + 1) === (name + '=')) {
+									cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+									break;
+							}
+					}
+			}
+			return cookieValue;
+		}
+		function send_rating(username){
+			var csrftoken = getCookie('csrftoken');
+			//document.write(csrftoken);
+			var rate_value;
+			if (document.getElementById('rating1'+username).checked) {
+				rate_value = document.getElementById('rating1'+username).value;
+			}
+			if (document.getElementById('rating2'+username).checked) {
+				rate_value = document.getElementById('rating2'+username).value;
+			}
+			if (document.getElementById('rating3'+username).checked) {
+				rate_value = document.getElementById('rating3'+username).value;
+			}
+			if (document.getElementById('rating4'+username).checked) {
+				rate_value = document.getElementById('rating4'+username).value;
+			}
+			if (document.getElementById('rating5'+username).checked) {
+				rate_value = document.getElementById('rating5'+username).value;
+			}
+			//var updatedtext = document.getElementById("text").innerText;
+			var xhttp = new XMLHttpRequest();
+			//dcocument.write(updatedtext);
+			//document.getElementById("text").innerHTML = updatedtext;
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+							//document.getElementById("text").textarea.html(this.responseText);
+							//document.getElementById("text").innerHTML = this.responseText;
+							//document.getElementById(username).style.display = "none";
+							location.reload();
+					}
+				};
+				xhttp.open("POST","rate/", true);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+				xhttp.send("to_user="+username+"&ratevalue="+rate_value);
+		}
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.9;background:rgba(76,175,80,2);">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand expand" href="{% url 'logout' %}"><img width=35x height=35px src="{% static "homepage/images/logout.png" %}"></a>
+				</div>
+				<ul class="nav navbar-nav" style="float:right;">
+				<!--	<li> <a class="expand" href="{% url 'userfriends' user %}">Friends</a></li>
+					<li class="dropdown"><a class="dropdown-toggle expand" data-toggle="dropdown" href="academics.html">Academics<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="academics.html#CU">Courses Undertaken</a></li>
+							<li><a href="academics.html#Pro">Projects</a></li>
+							<li><a href="academics.html#Acheivements">Achievements</a></li>
+						</ul>
+					</li>-->
+					<!-- <li><a class="navbar-brand expand" href="{% url 'userrating' user %}">Rating</a></li> -->
+					<li> <a style="color:white" class="expand" href="{% url 'userfriends' user %}"><img width=35x height=35px src="{% static "homepage/images/friends.png" %}">Friends</a></li>
+					<li><a style="color:white" class="expand" href="{% url 'userdetail' user %}"><img width=35x height=35px src="{% static "homepage/images/home.png" %}"> Home</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div style="background-color: rgba(200,200,200,0.7);padding: 10px;margin: 75px;border-radius: 15px">
+		<div>
+		  <h2 align="middle" style="color: black;text-align:center">Rate your friends</h2>
+			<ol class="rectangle-list">
+				{% if stillRate|length == 0 %}
+				<li>You have rated all your friends</li>
+				{% else %}
+			 {% for friend in stillRate %}
+			   <li style="font-size:200%;color:black;padding: .5em .5em .5em .5em">{{friend.username}} <button style="background:rgba(76,175,80,0.9);color:white;border-radius:10px;padding-left:10px;padding-right:10px;border: none;" onclick='dis("{{friend.username}}")' >Rate</button></li>
+				 		<span class="rating" id = "{{friend.username}}"  style="display:none;left:10px">
+  			 		<input id="rating5{{friend.username}}" type="radio" name="rating" value="5">
+				 		<label for="rating5{{friend.username}}">5</label>
+				 		<input id="rating4{{friend.username}}" type="radio" name="rating" value="4">
+  		 			<label for="rating4{{friend.username}}">4</label>
+  	 				<input id="rating3{{friend.username}}" type="radio" name="rating" value="3">
+  					<label for="rating3{{friend.username}}">3</label>
+  					<input id="rating2{{friend.username}}" type="radio" name="rating" value="2">
+  					<label for="rating2{{friend.username}}">2</label>
+  					<input id="rating1{{friend.username}}" type="radio" name="rating" value="1">
+  					<label for="rating1{{friend.username}}">1</label>
+						</span>
+						<button id="butt{{friend.username}}" style="display:none;background:rgba(76,175,80,0.9);color:white;border-radius:5px;padding-left:10px;padding-right:10px;border: none;" onclick='send_rating("{{friend.username}}")'> rate </button>
+
+
+			 {% endfor %}
+		  {% endif %}
+		    </ol>
+		</div>
+	</div>
+
+				</body>
+</html>

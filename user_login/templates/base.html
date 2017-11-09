@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static "user_groups/css/bootstrap.css" %}" rel="stylesheet" type="text/css" media="all">
+        <link href="{% static "user_groups/css/style.css" %}" rel="stylesheet" type="text/css" media="all">
+        <title>{% block title %}{% endblock %}</title>
+
+        {% block css %}{% endblock %}
+    </head>
+
+    <body style="height:100%;width:100%">
+        {% block content %}{% endblock %}
+
+        <script src="{% static "user_login/js/jquery.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "user_login/js/bootstrap.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "user_login/js/handlebars-v1.3.0.js" %}" type="text/javascript"></script>
+        {% block extra_js %}{% endblock %}
+    </body>
+
+</html>

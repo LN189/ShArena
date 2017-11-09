@@ -1,0 +1,1000 @@
+ 1009  make clean
+ 1010  ./calc
+ 1011  make
+ 1012  make clean
+ 1013  make
+ 1014  make clean
+ 1015  make
+ 1016  make clean
+ 1017  make
+ 1018  make clean
+ 1019  clear
+ 1020  make
+ 1021  make clean
+ 1022  make
+ 1023  make clean
+ 1024  make
+ 1025  make clean
+ 1026  make
+ 1027  make clean
+ 1028  awk -v val=56 '{if (NR==60) for(i=1;i<=56;i++){print "";}}' calc.y
+ 1029  awk -v val=56 '{if (NR==60) for(i=1;i<=56;i++){print "";}}' calc.y > calc.y
+ 1030  awk '{ if (NR == 6^C^Crintf("\n"); print; }'
+ 1031  awk '{ if (NR == 6) for(i=1;i<=56;i++){printf("\n");} print; }' calc.y
+ 1032  make
+ 1033  make clean
+ 1034  make
+ 1035  make clean
+ 1036  make
+ 1037  awk '{ if (NR == 60) for(i=1;i<=56;i++){printf("\n");} print; }' calc.y
+ 1038  awk '{ if (NR == 61) for(i=1;i<=56;i++){printf("\n");} print; }' calc.y
+ 1039  awk '{ if (NR == 60) for(i=1;i<=56;i++){printf("\n");} print; }' calc.y > calc.y
+ 1040  awk '{ if (NR == 60) for(i=1;i<=56;i++){printf("\n");} print; }' calc.y > o1
+ 1041  cat o1
+ 1042  awk '{ if (NR == 61) for(i=1;i<=56;i++){printf("\n");} print; }' calc.y > o1
+ 1043  cat o1
+ 1044  mv -f o1 calc.y 
+ 1045  make
+ 1046  sudo network-manager restart
+ 1047  cd DSA\ practise\ problems/
+ 1048  cd codechef/
+ 1049  ls
+ 1050  g++ ChefAndPickDigit.cpp 
+ 1051  ./a.out
+ 1052  g++ ChefAndPickDigit.cpp 
+ 1053  ./a.out
+ 1054  cd
+ 1055  clear
+ 1056  cd outlab-7
+ 1057  git clone https://git.cse.iitb.ac.in/ananya/ganit
+ 1058  cd ganit
+ 1059  make
+ 1060  makemake clean
+ 1061  make clean
+ 1062  make
+ 1063  make clean
+ 1064  make
+ 1065  make clean
+ 1066  make
+ 1067  makeclean
+ 1068  make clean
+ 1069  cd ganit_src 
+ 1070  gcc -g - Wall abs_g.c 
+ 1071  gcc -c - Wall abs_g.c 
+ 1072  gcc -c -Wall abs_g.c 
+ 1073  make clean
+ 1074  make
+ 1075  cd ..
+ 1076  make
+ 1077  make clean
+ 1078  make
+ 1079  make clean
+ 1080  make
+ 1081  cd outlab-7
+ 1082  cd ganit/
+ 1083  make
+ 1084  make clean
+ 1085  make
+ 1086  make clean
+ 1087  make
+ 1088  make clean
+ 1089  make
+ 1090  history
+ 1091  make
+ 1092  makeclean
+ 1093  make clean
+ 1094  make
+ 1095  make clean
+ 1096  make
+ 1097  make clean
+ 1098  make
+ 1099  make clean
+ 1100  make
+ 1101  make clean
+ 1102  make
+ 1103  make clean
+ 1104  make
+ 1105  make cleam
+ 1106  make clean
+ 1107  make
+ 1108  make clean
+ 1109  make
+ 1110  make clean
+ 1111  make
+ 1112  cd Desktop
+ 1113  clear
+ 1114  cd Pro
+ 1115  cd ..
+ 1116  clear
+ 1117  cd Problem2/
+ 1118  cd python
+ 1119  doxygen -g
+ 1120  sudo apt install doxygen
+ 1121  clear
+ 1122  doxygen -g
+ 1123  doxygen
+ 1124  clear
+ 1125  google-chrome ./html/index.html
+ 1126  clear
+ 1127  cd Problem2/python/latex/
+ 1128  clear
+ 1129  make
+ 1130  cd ..
+ 1131  clear
+ 1132  cd 
+ 1133  clear
+ 1134  cd outlab-7/Problem2/python/
+ 1135  doxygen
+ 1136  clear
+ 1137  doxygen -g
+ 1138  doxygen
+ 1139  cd latex
+ 1140  make
+ 1141  cd outlab-7
+ 1142  cd Pr
+ 1143  cd Problem1
+ 1144  make
+ 1145  make clean
+ 1146  ./calc
+ 1147  make
+ 1148  make clean
+ 1149  make
+ 1150  make clean
+ 1151  make
+ 1152  ./calc
+ 1153  make clean
+ 1154  make
+ 1155  make clean
+ 1156  make
+ 1157  ./calc
+ 1158  make clean
+ 1159  cd ganit
+ 1160  cd ..
+ 1161  cd ganit
+ 1162  make
+ 1163  cd ..
+ 1164  cd Problem
+ 1165  cd Problem1
+ 1166  make
+ 1167  make clean
+ 1168  make
+ 1169  clear
+ 1170  cd outlab-7/Problem2/python
+ 1171  doxygen
+ 1172  cd latex
+ 1173  make
+ 1174  cd ..
+ 1175  doxygen
+ 1176  cd latex
+ 1177  make
+ 1178  cd ..
+ 1179  doxygen
+ 1180  cd latex
+ 1181  make
+ 1182  cd ..
+ 1183  clear
+ 1184  cd java
+ 1185  doxygen -g
+ 1186  doxygen
+ 1187  cd input
+ 1188  make
+ 1189  cd ..
+ 1190  cd latex
+ 1191  make
+ 1192  cd ..
+ 1193  doxygen
+ 1194  cd latex
+ 1195  make
+ 1196  make clean
+ 1197  make cleam
+ 1198  make clean
+ 1199  cd ..
+ 1200  cd Problem1
+ 1201  make clean
+ 1202  cd DSA\ practise\ problems/codechef/
+ 1203  g++ FillTheMatrix.cpp 
+ 1204  ./a.out
+ 1205  g++ FillTheMatrix.cpp 
+ 1206  ./a.out
+ 1207  g++ FillTheMatrix.cpp 
+ 1208  ./a.out
+ 1209  g++ FillTheMatrix.cpp 
+ 1210  ./a.out
+ 1211  g++ FillTheMatrix.cpp 
+ 1212  ./a.out 
+ 1213  cd DSA\ practise\ problems/codechef/
+ 1214  g++ SerejaAndCommands.cpp 
+ 1215  ./a.out
+ 1216  ./a.out
+ 1217  g++ SerejaAndCommands.cpp 
+ 1218  ./a.out
+ 1219  g++ SerejaAndCommands.cpp 
+ 1220  ./a.out
+ 1221  python
+ 1222  python3
+ 1223  cd outlab-8
+ 1224  lc
+ 1225  ls
+ 1226  python3 Problem1.py 
+ 1227  ./vault 127f44f4a61c0a94e1f300c2d78f1624'
+ 1228  cd GOTG
+ 1229  ./vault 127f44f4a61c0a94e1f300c2d78f1624'
+ 1230  cd ..
+ 1231  cd outlab-8
+ 1232  ./vault 127f44f4a61c0a94e1f300c2d78f1624'
+ 1233  ./vault 127f44f4a61c0a94e1f300c2d78f1624
+ 1234  ./vault 127f44f4a61c0a94e1f300c2d78f1624
+ 1235  ls -lh
+ 1236  chmod 777 vault
+ 1237  ./vault 127f44f4a61c0a94e1f300c2d78f1624
+ 1238  sudo service network-manager restart 
+ 1239  cd outlab-8
+ 1240  ls
+ 1241  python3 Problem3.py
+ 1242  matplotlib -v
+ 1243  python3-tk
+ 1244  sudo apt install python3-tk
+ 1245  python3 Problem3.py
+ 1246  clear
+ 1247  python3 Problem3.py
+ 1248  ./decrypt
+ 1249  chmod 777 decrypt
+ 1250  ./decrypt
+ 1251  history
+ 1252  ./decrypt
+ 1253  python3 Problem5.py
+ 1254  python Problem5.p
+ 1255  python3 Problem5.py > o1
+ 1256  diff o1 words.txt
+ 1257  python3 Problem5.py
+ 1258  zipfile
+ 1259  python3 Problem5.py
+ 1260  python3 Problem5-2.py
+ 1261  python3 Problem5.py
+ 1262  cd outlab-
+ 1263  cd outlab-8
+ 1264  python3 Problem5.py
+ 1265  sudo service network-manager restart 
+ 1266  cd outlab-8
+ 1267  python3 Problem1.py
+ 1268  cd ..
+ 1269  cd Downloads/outlab_lab8/
+ 1270  cd GOTG/
+ 1271  python3 get_vault_key.py 
+ 1272  ./vault 127f44f4a61c0a94e1f300c2d78f1624
+ 1273  chmod 777 vault
+ 1274  ./vault 127f44f4a61c0a94e1f300c2d78f1624
+ 1275  cd ..
+ 1276  cd CaptainAmerica/
+ 1277  python3 decoder.py 
+ 1278  cd ..
+ 1279  cd Avengers/
+ 1280  python3 searchbot.py 
+ 1281  cd .. 
+ 1282  cd GOTG/
+ 1283  python3 get_vault_key.py 
+ 1284  clear
+ 1285  cd ..
+ 1286  cd DoctorStrange/
+ 1287  python3 retrieve.py 
+ 1288  cd ..
+ 1289  cd Bonus/
+ 1290  ./decrypt
+ 1291  chmod 777 decrypt
+ 1292  ./decrypt
+ 1293  python3 zipper.py 
+ 1294  cd ..
+ 1295  cd GOTG/
+ 1296  python3 get_vault_key.py 
+ 1297  cd ..
+ 1298  cd Avengers/
+ 1299  python3 searchbot.py 
+ 1300  python3 problem4.py 
+ 1301  python3 searchbot.py 
+ 1302  cd outlab-8
+ 1303  python3 generator.py 
+ 1304  cd 207-tuts/
+ 1305  Problem2.txt >> Problems1.txt 
+ 1306  cat Problem2.txt >> Problems1.txt 
+ 1307  cat Problems2.txt >> Problems1.txt 
+ 1308  cat Problems3.txt >> Problems1.txt 
+ 1309  cat Problems4.txt >> Problems1.txt 
+ 1310  cat Problems5.txt >> Problems1.txt 
+ 1311  cat Problems6.txt >> Problems1.txt 
+ 1312  cat Problems7.txt >> Problems1.txt 
+ 1313  sudo service network-manager restart 
+ 1314  cd Downloads/
+ 1315  man rar
+ 1316  gnuplot
+ 1317  texmaker
+ 1318  g++ TwoSeals.cpp 
+ 1319  ./a.out 
+ 1320  ./TwoSeals 
+ 1321  sudo apt-get upadte
+ 1322  sudo apt-get update
+ 1323  clear
+ 1324  cd ..
+ 1325  ./SubsequenceEquality 
+ 1326  g++ SubsequenceEquality
+ 1327  clear
+ 1328  g++ SubsequenceEquality.cpp
+ 1329  ./a.out
+ 1330  clear
+ 1331  ./a.out
+ 1332  clear
+ 1333  g++ SubsequenceEquality.cpp
+ 1334  ./a.out
+ 1335  g++ SubsequenceEquality.cpp
+ 1336  ./a.out
+ 1337  ls
+ 1338  python3 sample.py
+ 1339  python --version
+ 1340  python3 --version
+ 1341  pip --version
+ 1342  easy__install --version
+ 1343  easy_install --version
+ 1344  sudo apt install python3-pip
+ 1345  sudo apt install python-pip
+ 1346  sudo apt install python3-setuptools
+ 1347  sudo apt install python-setuptools
+ 1348  clear
+ 1349  easy_install django
+ 1350  sudo apt install django
+ 1351  sudo apt install python-setuptools
+ 1352  easy_install django
+ 1353  django
+ 1354  egrep 150 < cat history
+ 1355  egrep 150 < $(cat history)
+ 1356  cat history > checker
+ 1357  egrep 150 history
+ 1358  history > checker
+ 1359  egrep 150 checker
+ 1360  pactl -- set-sink-volume 0 150%
+ 1361  pactl -- set-sink-volume 0 200%
+ 1362  pactl -- set-sink-volume 0 400%
+ 1363  pip3 install django
+ 1364  pip install --upgrade pip
+ 1365  pip3 install --upgrade pip3
+ 1366  pip3 install --upgrade pip
+ 1367  django --version
+ 1368  django-admin --version
+ 1369  sudo apt-get upgrade
+ 1370  sudo apt-get  update
+ 1371  sudo apt-get upgrade
+ 1372  sudo apt-get  update
+ 1373  sudo apt-get upgrade
+ 1374  clear
+ 1375  django-admin --version
+ 1376  django-admin startproject FirstProject
+ 1377  cd FirstProject/
+ 1378  python manage.py runserver
+ 1379  python3 manage.py runserver
+ 1380  ls
+ 1381  python manage.py startapp polls
+ 1382  python3 manage.py startapp polls
+ 1383  python manage.py runserver
+ 1384  python3 manage.py runserver
+ 1385  django-admin DjangoPractice 
+ 1386  django-admin startproject DjangoPractice 
+ 1387  django-admin startapp BlogApp
+ 1388  rmdir DjangoPractice/ 
+ 1389  rmdir -f DjangoPractice/ 
+ 1390  rmdir --f DjangoPractice/ 
+ 1391  rmdir -R DjangoPractice/ 
+ 1392  rmdir -r DjangoPractice/ 
+ 1393  man rmdir
+ 1394  clear
+ 1395  django-admin startproject DjangoProject
+ 1396  cd DjangoProject/
+ 1397  django-admin startapp BlogApp
+ 1398  ./manage.py migrate
+ 1399  python3 manage.py migrate
+ 1400  alias 'python3 manage.py' runmanage
+ 1401  cd ..
+ 1402  nano .bashrc
+ 1403  cd DjangoProject/
+ 1404  runmanage
+ 1405  ./runmanage
+ 1406  cd ..
+ 1407  nano .bashrc
+ 1408  cd DjangoProject/
+ 1409  runmanage
+ 1410  cd ..
+ 1411  nano .bashrc
+ 1412  cd ..
+ 1413  cd ~
+ 1414  cd DjangoProject/
+ 1415  runmanage migrate
+ 1416  nano .bashrc
+ 1417  clear
+ 1418  python3 manage.py runserver
+ 1419  cd DjangoProject/
+ 1420  nano settings.py 
+ 1421  cd ..
+ 1422  cd BlogApp/
+ 1423  nano models.py
+ 1424  subl models.py
+ 1425  python3 manage.py makemigrations BlogApp
+ 1426  cd ..
+ 1427  python3 manage.py makemigrations BlogApp
+ 1428  subl models.py
+ 1429  rm models.py
+ 1430  cd BlogApp/
+ 1431  subl models.py
+ 1432  cd ..
+ 1433  python3 manage.py makemigrations BlogApp
+ 1434  python3 manage.py migrate
+ 1435  python3 manage.py createsuperuser
+ 1436  touch password
+ 1437  nano password
+ 1438  clear
+ 1439  python3 manage.py runserver
+ 1440  cd BlogApp/
+ 1441  subl admin.py
+ 1442  cd 
+ 1443  cd DjangoProject/
+ 1444  python3 manage.py runserver
+ 1445  cd BlogApp/
+ 1446  ls
+ 1447  touch urls.py
+ 1448  subl urls.py
+ 1449  cd ..
+ 1450  cd DjangoProject/
+ 1451  subl urls.py
+ 1452  cd ..
+ 1453  cd BlogApp/
+ 1454  subl views.py
+ 1455  mkdir templates
+ 1456  cd templates/
+ 1457  mkdir BlogApp
+ 1458  cd BlogApp/
+ 1459  touch base.html
+ 1460  touch post_list.html
+ 1461  subl base.html
+ 1462  subl post_list.html
+ 1463  python3 manage.py runserver
+ 1464  cd ..
+ 1465  python3 manage.py runserver
+ 1466  cd DjangoProject/
+ 1467  subl urls.py 
+ 1468  cd ..
+ 1469  cd DjangoProject/
+ 1470  cd ..
+ 1471  python3 manage.py runserver
+ 1472  cd BlogApp/templates/BlogApp/
+ 1473  subl post_list.html 
+ 1474  cd ..
+ 1475  python3 manage.py runserver
+ 1476  touch blog_app/templates/blog_app/post_new.html
+ 1477  tttt
+ 1478  clear
+ 1479  cd ..
+ 1480  sudo service network-manager restart 
+ 1481  cd Desktop/
+ 1482  ls -lh
+ 1483  rmdir Untitled\ Folder
+ 1484  rmdir Untitled\ Folder 2
+ 1485  rmdir Untitled\ Folder2
+ 1486  rmdir Untitled\ Folder\ 
+ 1487  rmdir Untitled\ Folder\ 2
+ 1488  rmdir Untitled\ Folder\ 3
+ 1489  rmdir Untitled\ Folder\ 4
+ 1490  rmdir Untitled\ Folder\ 5
+ 1491  cd DjangoProject/
+ 1492  python3 manage.py runserver
+ 1493  cd BlogApp/
+ 1494  subl urls.py
+ 1495  python3 manage.py runserver
+ 1496  cd ..
+ 1497  python3 manage.py makemigrations
+ 1498  python3 manage.py runserver
+ 1499  cd BlogApp/
+ 1500  mkdir static
+ 1501  cd static
+ 1502  mkdir css
+ 1503  cd css
+ 1504  touch base.csee
+ 1505  rm base.csee 
+ 1506  touch base.css
+ 1507  subl base.css
+ 1508  cd ..
+ 1509  cd BlogApp/
+ 1510  cd templates/
+ 1511  subl base.html
+ 1512  rm base.html
+ 1513  cd BlogApp/
+ 1514  subl base.html 
+ 1515  cd ..
+ 1516  subl models.py
+ 1517  cd ..
+ 1518  python3 manage.py runserver
+ 1519  subl urls.py
+ 1520  cd BlogApp/
+ 1521  subl urls.py 
+ 1522  cd ..
+ 1523  python3 manage.py runserver
+ 1524  cd BlogApp/
+ 1525  cd templates/BlogApp/
+ 1526  subl post_list.html 
+ 1527  cd ..
+ 1528  cd .. cd ..
+ 1529  cd ..
+ 1530  python3 manage.py runserver
+ 1531  pip3 install django-ckeditor
+ 1532  pip install django-ckeditor
+ 1533  sudo pip3 install django-ckeditor
+ 1534  python3 manage.py runserver
+ 1535  python3 manage.py makemigrations
+ 1536  python3 manage.py migrate
+ 1537  python3 manage.py runserver
+ 1538  python3 manage.py makemigrations
+ 1539  python3 manage.py migrate
+ 1540  python3 manage.py makemigrations
+ 1541  python3 manage.py migrate
+ 1542  python3 manage.py runserver
+ 1543  python3 manage.py collectstatic
+ 1544  python3 manage.py migrate
+ 1545  python3 manage.py makemigrations
+ 1546  python3 manage.py runserver
+ 1547  python3 manage.py makemigrations
+ 1548  python3 manage.py migrate
+ 1549  python3 manage.py collectstatic
+ 1550  python3 manage.py makemigrations blogapp
+ 1551  python3 manage.py makemigrations Blogapp
+ 1552  python3 manage.py makemigrations BlogApp
+ 1553  python3 manage.py migrate
+ 1554  python3 manage.py collectstatic
+ 1555  python3 manage.py makemigrations BlogApp
+ 1556  python3 manage.py migrate
+ 1557  python3 manage.py collectstatic
+ 1558  ./manage.py collectstatic
+ 1559  purge django-ckeditor
+ 1560  pip django-ckeditor
+ 1561  pip install django-ckeditor
+ 1562  sudo pip install django-ckeditor
+ 1563  sudo pip3 install django-ckeditor
+ 1564  python --version
+ 1565  django --version
+ 1566  django-admin --version
+ 1567  ./manage.py collectstatic
+ 1568  python3 manage.py migrate
+ 1569  python3 manage.py makemigrations
+ 1570  python3 manage.py migrate
+ 1571  python3 manage.py runserver
+ 1572  django-admin createsuperuser
+ 1573  python3 manage.py createsuperuser
+ 1574  python3 manage.py runserver
+ 1575  cd BlogApp/
+ 1576  cd templates/
+ 1577  mkdir registration
+ 1578  cd registration/
+ 1579  touch login.html
+ 1580  subl login.html
+ 1581  python3 manage.py runserver
+ 1582  cd ..
+ 1583  python3 manage.py runserver
+ 1584  djang-admin startapp RegisterApp 
+ 1585  django-admin startapp RegisterApp 
+ 1586  cd DjangoProject/
+ 1587  subl urls.py 
+ 1588  cd ..
+ 1589  cd RegisterApp/
+ 1590  touch urls.py
+ 1591  subl urls.py 
+ 1592  subl view.py
+ 1593  subl views.py
+ 1594  cd 
+ 1595  cd DjangoProject/DjangoProject/
+ 1596  subl settings.py 
+ 1597  cd ..'
+ 1598  cd ..
+ 1599  cd RegisterApp/
+ 1600  cd ..
+ 1601  cd BlogApp/templates/BlogApp/
+ 1602  touch signup.html
+ 1603  subl signup.html 
+ 1604  rm signup.html 
+ 1605  cd ..
+ 1606  mkdir templates
+ 1607  cd templates/
+ 1608  touch signup.html
+ 1609  subl signup.html 
+ 1610  cd ..
+ 1611  python3 manage.py runserver
+ 1612  cd ..
+ 1613  cd Dj
+ 1614  pip install django-tinymce
+ 1615  sudo pip install django-tinymce
+ 1616  sudo pip3 install django-tinymce
+ 1617  python3 manage.py runserver
+ 1618  python3 manage.py collectstaticfiles
+ 1619  python3 manage.py collectstatic
+ 1620  ls -lh
+ 1621  cd BlogApp/
+ 1622  ls -lh
+ 1623  cd ..
+ 1624  chmod -R 777 BlogApp/ 
+ 1625  cd BlogApp/
+ 1626  ls -lh
+ 1627  cd ..
+ 1628  python3 manage.py collectstatic
+ 1629  python3 manage.py runserver
+ 1630  python3 manage.py makemigrations
+ 1631  python3 manage.py migrate
+ 1632  python3 manage.py makemigrations
+ 1633  python3 manage.py migrate BlogApp/
+ 1634  python3 manage.py makemigrations BlogApp
+ 1635  python3 manage.py makemigrations RegisterApp
+ 1636  python3 manage.py collectstatic
+ 1637  python3 manage.py runs
+ 1638  python3 manage.py makemigrations RegisterApp
+ 1639  python3 manage.py migrate
+ 1640  python3 manage.py runserver
+ 1641  python3 manage.py createsuperuser
+ 1642  python3 manage.py runserver
+ 1643  git init
+ 1644  gid add *
+ 1645  git add *
+ 1646  git commit -m "first commit"
+ 1647  git remote add origin https://github.com/The8thHorcrux/Pacman.git
+ 1648  git push -u origin master
+ 1649  git init
+ 1650  git commit -m "first commit"
+ 1651  git add *
+ 1652  git commit -m "second commit"
+ 1653  git remote add origin https://github.com/The8thHorcrux/Cryptosuite.git
+ 1654  git push -u origin master
+ 1655  git init
+ 1656  git add *
+ 1657  git commit -m "first commit"
+ 1658  git remote add origin https://github.com/The8thHorcrux/MiniParser.git
+ 1659  git push -u origin master
+ 1660  ifconfig
+ 1661  hostname -T
+ 1662  hostname -I
+ 1663  django-admin startproject ShArena
+ 1664  cd ShArena/
+ 1665  python3 manage.py migrate
+ 1666  ls
+ 1667  python3 manage.py runserver
+ 1668  python3 manage.py startapp register_app
+ 1669  cd ShArena/
+ 1670  subl settings.py 
+ 1671  cd ..
+ 1672  subl urls.
+ 1673  cd ShArena/
+ 1674  subl urls.py 
+ 1675  mkdir templates
+ 1676  cd templates/
+ 1677  mkdir registration
+ 1678  cd registration/
+ 1679  touch login.html
+ 1680  subl login.html 
+ 1681  django-admin startproject ShArena
+ 1682  cd ShArena/
+ 1683  python3 manage.py migrate
+ 1684  python3 manage.py runserver
+ 1685  cd ..
+ 1686  cd Downloads/simple-file-upload-master/
+ 1687  python3 manage.py runserver
+ 1688  python3 manage.py migrate
+ 1689  python3 manage.py makemigrations
+ 1690  python3 manage.py runserver
+ 1691  cd ..
+ 1692  cd Do
+ 1693  cd Downloads/
+ 1694  cd sharena/
+ 1695  python3 manage.py runserver
+ 1696  cd ..
+ 1697  cd sharena/
+ 1698  python3 manage.py runserver
+ 1699  sudo pip3 install django-friendship
+ 1700  python3 manage.py runserver
+ 1701  python3 manage.py makemigrations
+ 1702  python3 manage.py migrate
+ 1703  python3 manage.py runserver
+ 1704  python3 manage.py makemigrations
+ 1705  python3 manage.py migrate
+ 1706  python3 manage.py runserver
+ 1707  python3 manage.py makemigrations
+ 1708  python3 manage.py migrate
+ 1709  python3 manage.py runserver
+ 1710  python3 manage.py makemigrations
+ 1711  python3 manage.py migrate
+ 1712  python3 manage.py runserver
+ 1713  python3 manage.py makemigrations
+ 1714  python3 manage.py migrate
+ 1715  python3 manage.py runserver
+ 1716  ifconfig
+ 1717  sudo apt-get install flashplugin-installer 
+ 1718  git init
+ 1719  git add *
+ 1720  cd ..
+ 1721  mkdir puller
+ 1722  cd puller/
+ 1723  git init
+ 1724  git pull https://github.com/The8thHorcrux/ShArena
+ 1725  ls
+ 1726  cd .. sharena/
+ 1727  cd sharena/
+ 1728  git init
+ 1729  git add *
+ 1730  git commit -m "ProjectFileListShowing"
+ 1731  git push https://github.com/The8thHorcrux/ShArena
+ 1732  git remote add origin https://github.com/The8thHorcrux/ShArena
+ 1733  git remote add NaryaStark https://github.com/The8thHorcrux/ShArena
+ 1734  git push -u Naryastark mater
+ 1735  git push -u Naryastark master
+ 1736  git push -u origin  master
+ 1737  cd ..
+ 1738  cd Komodo-Edit-10.2.3-17708-linux-x86_64/omodo
+ 1739  cd Komodo-Edit-10.2.3-17708-linux-x86_64/
+ 1740  ./install.sh
+ 1741  cd ..
+ 1742  cd s
+ 1743  cd sharena/
+ 1744  python3 manage.py runserver
+ 1745  python3 manage.py createsuperuser
+ 1746  python3 manage.py runserver
+ 1747  cd ..
+ 1748  mkdir p1o7
+ 1749  cd p1o7/
+ 1750  git pull https://git.cse.iitb.ac.in/ananya/ganit
+ 1751  git init
+ 1752  git pull https://git.cse.iitb.ac.in/ananya/ganit
+ 1753  cd ..
+ 1754  cd sharena/
+ 1755  python3 manage.py runserver
+ 1756  cd ..
+ 1757  cd p1o7/
+ 1758  make
+ 1759  make clean
+ 1760  make
+ 1761  make clean
+ 1762  make
+ 1763  make clean
+ 1764  make
+ 1765  cd ..
+ 1766  cd sharena/
+ 1767  git init
+ 1768  git push -u origin  master
+ 1769  git add*
+ 1770  git add *
+ 1771  git commit -m "RelatedMemberesShowing"
+ 1772  git push -u origin  master
+ 1773  git init
+ 1774  git add *
+ 1775  git commit -m "ForTheSakeOfCommiting"
+ 1776  git push -u origin  master
+ 1777  git push https://github.com/The8thHorcrux/ShArena
+ 1778  git push -u origin  master
+ 1779  cd Downloads/sharena/
+ 1780  sudo apt-get install libevent-dev
+ 1781  sudo pip3 install -e git+https://github.com/abourget/gevent-socketio.git#egg=gevent_socketio-dev
+ 1782  sudo pip install django psycopg2 psycogreen
+ 1783  pip install django psycopg2 psycogreen
+ 1784  sudo pip3 install django psycopg2 psycogreen
+ 1785  python3 runserver.py 
+ 1786  python runserver.py 
+ 1787  python3 runserver.py 
+ 1788  python3 manage.py runserver
+ 1789  SPCL200-XPZGS
+ 1790  python3 runserver.py runserver
+ 1791  cd python3 manage.py runserver
+ 1792  python3 manage.py runserver
+ 1793  cd Downloads/sharena/
+ 1794  python3 manage.py runserver
+ 1795  cd ..
+ 1796  cd django_twisted_chat-0.1.3/
+ 1797  sudo pip3 install django-twisted
+ 1798  twisted --version
+ 1799  sudo pip3 install twisted
+ 1800  python3 manage.py runserver
+ 1801  python3 manage.py createsuperuser
+ 1802  python3 manage.py runserver
+ 1803  redis-server
+ 1804  clear
+ 1805  ./manage.py migrate
+ 1806  cd Downloads/django_twisted_chat-0.1.3/
+ 1807  sudo -H pip3 install twisted 
+ 1808  python3 manage.py syncdb
+ 1809  python manage.py syncdb
+ 1810  python3 manage.py syncdb
+ 1811  python3 manage.py makemigartions
+ 1812  python3 manage.py makemigrations
+ 1813  python3 manage.py syncdb
+ 1814  python3 manage.py makemigrations
+ 1815  sudo pip3 upgrade django
+ 1816  sudo pip3 install django --1.5.2
+ 1817  sudo pip3 install django~=1.5.2
+ 1818  sudo pip3 install channels==1.1.5
+ 1819  cd ..
+ 1820  cd sharena/
+ 1821  python3 manage.py runserver
+ 1822  cd ..
+ 1823  cd django_twisted_chat-0.1.3/
+ 1824  sudo pip3 install asgi_redis
+ 1825  sudo pip3 install websocket-client
+ 1826  cd ..
+ 1827  history
+ 1828  ifconfig
+ 1829  cd Downloads/sharena/
+ 1830  python3 manage.py runserver
+ 1831  python3 manage.py runserver 0.0.0.0:8000
+ 1832  sudo fuser -k 8000/tcp
+ 1833  python3 manage.py runserver 0.0.0.0:8000
+ 1834  cd ..
+ 1835  cd channels-examples-master/
+ 1836  cd multichat/
+ 1837  python3 manage.py migrate
+ 1838  python3 manage.py runserver
+ 1839  python manage.py runserver
+ 1840  sudo pip install -r requirements.txt
+ 1841  pip
+ 1842  sudo apt-grt install pip
+ 1843  sudo apt-get install pip
+ 1844  sudo apt  install pip
+ 1845  pip install django
+ 1846  sudo pip install -r requirements.txt
+ 1847  sudo -H pip install -r requirements.txt
+ 1848  pip install -r requirements.txt
+ 1849  python manage.py runserver
+ 1850  python3 manage.py runserver
+ 1851  python3 manage.py makemigrations
+ 1852  python3 manage.py createsuperuser
+ 1853  python3 manage.py runserver
+ 1854  clear
+ 1855  sudo apt install redis-server
+ 1856  pip install -U channels
+ 1857  clear
+ 1858  sudo apt-get install python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev
+ 1859  pip install Twisted
+ 1860  python3 manage.py runserver
+ 1861  python3 manage.py migrate
+ 1862  python3 manage.py runserver
+ 1863  python manage.py migrate
+ 1864  python manage.py runserver
+ 1865  ifconfig
+ 1866  twisted --version
+ 1867  cd Downloads/channels-examples-master/
+ 1868  python manage.py runserver
+ 1869  cd multichat/
+ 1870  python3 manage.py runserver
+ 1871  cd ..
+ 1872  cd sharena/
+ 1873  python3 manage.py runserver
+ 1874  cd ..
+ 1875  cd ~
+ 1876  cd Downloads/ShArena-master/
+ 1877  python3 manage.py runserver
+ 1878  cd Downloads/channels-examples-master/multichat/
+ 1879  python3 manage.py runserver
+ 1880  cd ..
+ 1881  cd sharenaChatTry/
+ 1882  python3 manage.py runserver
+ 1883  python3 manage.py makemigrations
+ 1884  python3 manage.py migrate
+ 1885  python3 manage.py migrate chat
+ 1886  python3 manage.py makemigrations chat
+ 1887  python3 manage.py makemigrations
+ 1888  python3 manage.py migrate chat
+ 1889  python3 manage.py makemigrations
+ 1890  python3 manage.py makemigrations chat
+ 1891  python3 manage.py migrate chat
+ 1892  python3 manage.py makemigrations
+ 1893  python3 manage.py migrate chat
+ 1894  python3 manage.py runserver
+ 1895  clear
+ 1896  python3 manage.py runserver
+ 1897  python3 manage.py collectstatic
+ 1898  python3 manage.py runserver
+ 1899  python3 manage.py collectstatic
+ 1900  python3 manage.py migrate chat
+ 1901  python3 manage.py makemigrations
+ 1902  python3 manage.py runserver
+ 1903  python3 manage.py collectstatic
+ 1904  python3 manage.py runserver
+ 1905  python3 manage.py collectstatic
+ 1906  python3 manage.py runserver
+ 1907  python3 manage.py collectstatic
+ 1908  python3 manage.py runserver
+ 1909  cd ..
+ 1910  cd channels-examples-master/
+ 1911  cd multichat/
+ 1912  python3 manage.py runserver
+ 1913  cd ..
+ 1914  cd sharena
+ 1915  cd ..
+ 1916  cd sharenaChatTry/
+ 1917  python3 manage.py runserver
+ 1918  cd Downloads/sharenaChatTry/
+ 1919  python3 manage.py runserver
+ 1920  python3 manage.py collectstatics
+ 1921  python3 manage.py collectstatic
+ 1922  python3 manage.py runserver
+ 1923  ifconfig
+ 1924  python3 manage.py runserver 0.0.0.0:8000
+ 1925  sudo apt-get update
+ 1926  sudo apt-get install apache2
+ 1927  sudo apache2ctl configtest
+ 1928  sudo nano /etc/apache2/apache2.conf
+ 1929  sudo apache2ctl configtest
+ 1930  sudo nano /etc/apache2/apache2.conf
+ 1931  ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+ 1932  sudo apt-get install curl
+ 1933  curl http://icanhazip.com
+ 1934  sudo nano /etc/apache2/apache2.conf
+ 1935  sudo apache2ctl configtest
+ 1936  sudo systemctl restart apache2
+ 1937  sudo ufw app list
+ 1938  sudo ufw app info "Apache Full"
+ 1939  sudo ufw allow in "Apache Full"
+ 1940  curl http://icanhazip.com
+ 1941  sudo apt-get install mysql-server
+ 1942  mysql_secure_installation
+ 1943  sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+ 1944  sudo nano /etc/apache2/mods-enabled/dir.conf
+ 1945  sudo systemctl restart apache2
+ 1946  sudo systemctl status apache2
+ 1947  apt-cache search php- | less
+ 1948  sudo apt-get install php-cli
+ 1949  sudo nano /var/www/html/info.php
+ 1950  curl http://icanhazip.com
+ 1951  cd Downloads/sharenaChatTry/
+ 1952  python3 manage.py runserver
+ 1953  mysql
+ 1954  mysql 88888888
+ 1955  mysql -u lakshmi -p 88888888
+ 1956  mysql -u lakshmi
+ 1957  mysql -u lakshmi -p
+ 1958  mysql -u mysqladmin -p
+ 1959  sudo apt update && sudo apt upgrade
+ 1960  history
+ 1961  sudo apt update && sudo apt upgrade
+ 1962  sudo apt install mysql-workbench
+ 1963  mysql-workbench
+ 1964  cd Downloads/django-organice-master/
+ 1965  make
+ 1966  npm 
+ 1967  sudo install npm
+ 1968  sudo apt install npm
+ 1969  node
+ 1970  sudo apt install nodejs-legacy
+ 1971  nodemon
+ 1972  npm install pacakge.json
+ 1973  node app.js
+ 1974  cd src
+ 1975  cd ..
+ 1976  cd trycode-master/
+ 1977  npm install pacakge.json
+ 1978  nodemon app.js
+ 1979  node app.js
+ 1980  cd src/client/
+ 1981  node app.js
+ 1982  cd ..
+ 1983  cd..
+ 1984  cd ..
+ 1985  cd src
+ 1986  cd client/
+ 1987  npm install
+ 1988  cd ..
+ 1989  cd collaborative-text-editor-master/
+ 1990  npm install
+ 1991  npm start
+ 1992  cd Downloads/
+ 1993  git clone git://github.com/firebase/firepad.git
+ 1994  mkdir firepad
+ 1995  cd firepad/
+ 1996  git clone git://github.com/firebase/firepad.git
+ 1997  cd ..
+ 1998  cd channels-examples-master
+ 1999  cd liveblog/
+ 2000  python3 manage.py
+ 2001  python3 manage.py makemigrations
+ 2002  python3 manage.py migrate
+ 2003  python3 manage.py runserver
+ 2004  python3 manage.py createsuperuser
+ 2005  python3 manage.py runserver
+ 2006  history
+ 2007  cd ..
+ 2008  history > o1

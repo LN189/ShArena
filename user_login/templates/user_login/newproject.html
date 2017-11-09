@@ -1,7 +1,45 @@
-{% block content %}
-    <h1>New project</h1>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{% static "user_groups/css/style_projectCreate.css" %}" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.6;color:rgb(10,10,10);">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand expand" href="{% url 'logout' %}"><img width=35x height=35px src="{% static "homepage/images/logout.png" %}"></a>
+				</div>
+				<ul class="nav navbar-nav" style="float:right;">
+				<!--	<li> <a class="expand" href="{% url 'userfriends' user %}">Friends</a></li>
+					<li class="dropdown"><a class="dropdown-toggle expand" data-toggle="dropdown" href="academics.html">Academics<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="academics.html#CU">Courses Undertaken</a></li>
+							<li><a href="academics.html#Pro">Projects</a></li>
+							<li><a href="academics.html#Acheivements">Achievements</a></li>
+						</ul>
+					</li>-->
+					<li><a class="expand" href="{% url 'groups' %}"><img width=35x height=35px src="{% static "homepage/images/groups.png" %}">Groups</a></li>
+          <li><a class="expand" href="{% url 'userdetail' user %}"><img width=35x height=35px src="{% static "homepage/images/home.png" %}"> Home</a></li>
+				</ul>
+			</div>
+		</nav>
+    <br>
+    <br>
+    <br>
+    <h1 align="middle">New project</h1>
+    <div class="main">
     <form action="" method="post">{% csrf_token %}
       {{ form.as_p }}
       <input type="submit" value="Save" />
     </form>
-{% endblock %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+Javascript and PHP
+==============================================================
+
+
+-----------------------------------------------------------
+Submission Guidelines for assignment - (5 marks, 0 to be awarded in case these are not followed)[to be followed for both inlab and outlab]
+-----------------------------------------------------------
+
+For this lab (specifically for PHP), you will have to use your Mars Server (CSE logins) accounts.
+
+
+Use:
+
+
+ssh -X @mars.cse.iitb.ac.in
+
+To login to your CSE account. Follow these instructions to create folder structure and build solutions:
+
+1. Create a file readme.txt in lab#_rollno.1_rollno.2_rollno.3_rollno.4 directory, which contains contribution of each team member and references (cite where you get code/code snippets from).
+e.g.lab3_154054002_154054005_154054001
+
+2. Rename the directory lab#_rollno.1_rollno.2_rollno.3_rollno.4 to actual lab number instead of #, replace the rollno.N with your respective roll numbers.
+e.g.lab3_154054002_154054005_154054001
+
+3. Compress the directory to .tar.gz
+e.g. codekars.tar.gx
+
+4. Upload on Moodle. Submit one assignment per team.
+
+Please note that for all the problems we may try invalid inputs as test cases, and you are supposed to think and evaluate your assigments for them before you submit.
+
+*******************************************************************************************************
+
+
+
+Inlab
+
+Q1) Write a javascript interactive program embedded inside an html page which tests if a given number is a palindrome number. The number can be input using a form.
+
+Let the page be a little colorful (very subjective, don't ask doubts about it please, just do what you want.)
+
+Q1a) Add a javascript runtime code error handler to a copy of the above program, Make an error in this copy of the program and show that it really works (i.e., an error message is popped up due to a bug in javascript program).
+
+Let the error be shown using alert popup. You must use this functionality of error catching in all your programs below so that it helps you.
+
+Q2) Javascript program asks for number N, then it creates a form with N blank cells to read N numbers. The program sorts the numbers input by the user and displays them  in the same page. Use sort function available in javascript... no need to write your own.
+
+Q3) Write a javascript program which toggles an image when the mouse enters the image area and when it leaves after entering. You can select your set of images.
+
+
+
+PHP
+
+Q4) Word Frequency Counter
+
+- Take a text file as input using file input in HTML on index.php
+
+- Validate that the taken input file is with extension .txt using simple javascript. 
+If not, pop an alert message
+    
+- In PHP, check that (file size < 100kB). If not, display error
+
+- The text file has to be processed to produce the frequency count of
+ (number of occurrences) of each word sorted in alphabetical order as a HTML table
+
+- Frequency count must be case-insensitive
+(e.g. both 'Hey' and 'hey' would be counted under the same word 'hey')
+
+
+Q5) Write a PHP program to sort a list of elements using Gnome sort.
+Gnome sort always finds the first place where two adjacent elements are in the wrong order and swaps them.
+Javascript and PHP
+==============================================================
+
+
+-----------------------------------------------------------
+Submission Guidelines for assignment - (5 marks, 0 to be awarded in case these are not followed)[to be followed for both inlab and outlab]
+-----------------------------------------------------------
+
+For this lab (specifically for PHP), you will have to use your Mars Server (CSE logins) accounts.
+
+
+Use:
+
+
+ssh -X @mars.cse.iitb.ac.in
+
+To login to your CSE account. Follow these instructions to create folder structure and build solutions:
+
+1. Create a file readme.txt in lab#_rollno.1_rollno.2_rollno.3_rollno.4 directory, which contains contribution of each team member and references (cite where you get code/code snippets from).
+e.g.lab3_154054002_154054005_154054001
+
+2. Rename the directory lab#_rollno.1_rollno.2_rollno.3_rollno.4 to actual lab number instead of #, replace the rollno.N with your respective roll numbers.
+e.g.lab3_154054002_154054005_154054001
+
+3. Compress the directory to .tar.gz
+e.g. codekars.tar.gx
+
+4. Upload on Moodle. Submit one assignment per team.
+
+Please note that for all the problems we may try invalid inputs as test cases, and you are supposed to think and evaluate your assigments for them before you submit.
+
+*******************************************************************************************************
+
+manoj
+yaswanth
+boy
+nd 
+s 
+lka
+AKN
+S
+QS
+D
+D
+Dakjwd
+qwd
+qwd
+qfgza nkjhjj jnjjnkjk
+
+
+
+
+Inlab
+
+Q1) Write a javascript interactive program embedded inside an html page which tests if a given number is a palindrome number. The number can be input using a form.
+
+Let the page be a little colorful (very subjective, don't ask doubts about it please, just do what you want.)
+
+Q1a) Add a javascript runtime code error handler to a copy of the above program, Make an error in this copy of the program and show that it really works (i.e., an error message is popped up due to a bug in javascript program).
+
+Let the error be shown using alert popup. You must use this functionality of error catching in all your programs below so that it helps you.
+
+Q2) Javascript program asks for number N, then it creates a form with N blank cells to read N numbers. The program sorts the numbers input by the user and displays them  in the same page. Use sort function available in javascript... no need to write your own.
+
+Q3) Write a javascript program which toggles an image when the mouse enters the image area and when it leaves after entering. You can select your set of images.
+
+
+
+PHP
+
+Q4) Word Frequency Counter
+
+- Take a text file as input using file input in HTML on index.php
+
+- Validate that the taken input file is with extension .txt using simple javascript. 
+If not, pop an alert message
+    
+- In PHP, check that (file size < 100kB). If not, display error
+
+- The text file has to be processed to produce the frequency count of
+ (number of occurrences) of each word sorted in alphabetical order as a HTML table
+
+- Frequency count must be case-insensitive
+(e.g. both 'Hey' and 'hey' would be counted under the same word 'hey')
+
+
+Q5) Write a PHP program to sort a list of elements using Gnome sort.
+Gnome sort always finds the first place where two adjacent elements are in the wrong order and swaps them.
+Java Scriptdiptesh
+
+manoj
+yaswanth
+boy
+nd 
+s 
+lka
+AKN
+S
+QS
+D
+D
+Dakjwd
+qwd
+qwd
+qfgza nkjhjj jnjjnkjk
+boy
+@merge yas@123 sdfg
+kjskja 
+kdkajs
+iwo asn as,ma aa
+bot Jdj dkjf ksj ksja k
+s,dn skdjbs lskfn 
+
+
+

@@ -1,7 +1,9 @@
 {% block content %}
+<div align="middle" style="margin: 200px">
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Upload</button>
   </form>
+  </div>
 {% endblock %}

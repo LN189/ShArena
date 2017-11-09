@@ -1,5 +1,4 @@
-
-{% block content %}
+<!--  {% block content %}
 <h2>Login</h2>
 <form method="post">
   {% csrf_token %}
@@ -7,3 +6,41 @@
   <button type="submit">Login</button>
 </form>
 {% endblock content %}
+-->
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #manoj{
+      margin-top: 200px;
+    }
+  </style>
+  <title>Login page</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{% static "user_groups/css/style_projectCreate.css" %}" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+		<br>
+		<br>
+		<br>
+    <h2 align="middle">Login details</h2><br>
+    <div style="text-align:center">
+  		<div class="main" style="margin: auto;margin-top: 25px;margin-bottom: 25px;max-width:400px;text-align:center" align="middle">
+  				<form class="form-horizontal" method="post" style="display: inline" align="middle">
+  					{% csrf_token %}
+  					<div class="form-group">{{ form.as_p }}</div>
+  				<input type="submit" value="Login" />
+  				</form>
+  		</div>
+    </div>
+		<p align="middle" style="color: black">New user? you can always <a href="{% url 'signup' %}" class="link" style="color: blue">register/signup</a> to our site</p>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{% load staticfiles  %}
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{% static "homepage/css/style_profile.css" %}" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.6;color:rgb(10,10,10);">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand expand" href="{% url 'logout' %}"><img width=35x height=35px src="{% static "homepage/images/logout.png" %}"></a>
+				</div>
+				<ul class="nav navbar-nav" style="float:right;">
+				<!--	<li> <a class="expand" href="{% url 'userfriends' user %}">Friends</a></li>
+					<li class="dropdown"><a class="dropdown-toggle expand" data-toggle="dropdown" href="academics.html">Academics<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="academics.html#CU">Courses Undertaken</a></li>
+							<li><a href="academics.html#Pro">Projects</a></li>
+							<li><a href="academics.html#Acheivements">Achievements</a></li>
+						</ul>
+					</li>-->
+          <li> <a class="expand" href="{% url 'userfriends' guest %}"><img width=35x height=35px src="{% static "homepage/images/friends.png" %}">Friends</a></li>
+					<li><a class="expand" href="{% url 'userdetail' guest %}"><img width=35x height=35px src="{% static "homepage/images/home.png" %}"> Home</a></li>
+				</ul>
+			</div>
+		</nav>
+    <div style="margin-top:200px;margin-left:200px;margin-bottom:200px;max-height=500px">
+      {% if status == 0 %}
+      <img src="{% static "homepage/images/default.jpg" %}" style="width:150px;height:150px">
+      {% else %}
+      <img src="/media/admin_images/{{host}}.jpg" style="width:150px;height:150px">
+      {% endif %}
+      <br>
+      <br>
+      <b style="font-size:130%"><span style="color:orange">Name: </span><span style="color:white">{{host}}</span></b>
+      <br>
+      <b style="font-size:130%"><span style="color:orange">Rating: </span><span style="color:white">{{finalRate}}</span><img width=25x height=25px style="margin-bottom: 9px" src="{% static "homepage/images/star2.png" %}"></b>
+      <br>
+      <b style="font-size:130%"><span style="color:orange">Ratedby: </span><span style="color:white">{{members}} users</span></b>
+      <br>
+      <b style="font-size:130%"><span style="color:orange">Rated 5<img width=25x height=25px style="margin-bottom: 9px" src="{% static "homepage/images/star2.png" %}"> by: </span><span style="color:white">{{rate5}} users</span></b>
+      <br>
+      <b style="font-size:130%"><span style="color:orange">Rated 4<img width=25x height=25px style="margin-bottom: 9px" src="{% static "homepage/images/star2.png" %}"> by: </span><span style="color:white">{{rate4}} users</span></b>
+      <br>
+      <b style="font-size:130%"><span style="color:orange">Rated 3<img width=25x height=25px style="margin-bottom: 9px" src="{% static "homepage/images/star2.png" %}"> by: </span><span style="color:white">{{rate3}} users</span></b>
+      <br>
+      <b style="font-size:130%"><span style="color:orange">Rated 2<img width=25x height=25px style="margin-bottom: 9px" src="{% static "homepage/images/star2.png" %}"> by: </span><span style="color:white">{{rate2}} users</span></b>
+      <br>
+      <b style="font-size:130%"><span style="color:orange">Rated 1<img width=25x height=25px style="margin-bottom: 9px" src="{% static "homepage/images/star2.png" %}"> by: </span><span style="color:white">{{rate1}} users</span></b>
+      <br>
+      <b style="font-size:130%"><span style="color:orange">Friends: </span></b>
+      <br>
+      <b style="font-size:130%;color:white">
+      <ol>
+			 {% for friend in friends %}
+			   <li>{{friend.username}}</li>
+			 {% endfor %}
+		  </ol>
+      </b>
+      <b style="font-size:130%"><span style="color:orange">InvolvedProjects: </span></b>
+      <br>
+      <b style="font-size:130%;color:white">
+      <ol>
+			 {% for project in pro %}
+			   <li>{{project.title}}</li>
+			 {% endfor %}
+		  </ol>
+      </b>
+    </div>
+  </body>
+</html>

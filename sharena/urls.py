@@ -23,11 +23,13 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     url(r'^',include('homepage.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^users/', include('django.contrib.auth.urls')),
+    url(r'^users/', include('django.contrib.auth.urls'),name='login'),
     url(r'^signup/', include('register_app.urls')),
     url(r'^friendship/', include('friendship.urls')),
     url(r'^profiles/',include('user_login.urls')),
     url(r'^groups/',include('user_groups.urls')),
+    url(r'^chat/', include('django_private_chat.urls')),
+	url(r'^chat/', include('custom_app.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

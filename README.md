@@ -1,6 +1,6 @@
 # ShArena
 
-Real Time Collaborating web platform with all features a social platform needs for a smooth workflow
+Real Time Collaborating web platform with all features a social platform needs for a smooth workflow <br>
 Text editor with features like undo, redo, live editing and merging with conflict resolution protocols
 
 Course Project:- <br>
